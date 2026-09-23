@@ -37,13 +37,14 @@ h1,h2,h3,p{margin-top:0}
   place-items:center;
   width:72px;
   height:62px;
-  padding:8px 10px;
-  background:var(--vanilla);
+  padding:0;
+  background:transparent;
   text-decoration:none;
 }
 .brand img{
-  width:52px;
+  width:58px;
   height:auto;
+  filter:brightness(0) invert(1);
 }
 nav{display:none}
 
@@ -414,11 +415,11 @@ nav{display:none}
   .identity-copy{margin-right:8vw}
 }
 .lighthouse-sketch{
-  width:min(78vw,380px);
-  margin:34px auto 24px;
+  width:min(88vw,500px);
+  margin:38px auto 26px;
   color:var(--vanilla);
-  opacity:.88;
-  transform:rotate(-1deg);
+  opacity:.96;
+  transform:rotate(-.5deg);
 }
 .lighthouse-sketch svg{
   display:block;
@@ -426,13 +427,28 @@ nav{display:none}
   height:auto;
   overflow:visible;
 }
+.lighthouse-sketch .chalk{
+  stroke-width:5;
+}
 .lighthouse-sketch path{
   vector-effect:non-scaling-stroke;
-  filter:drop-shadow(.5px .5px 0 rgba(243,230,201,.18));
+  filter:drop-shadow(.45px .45px 0 rgba(243,230,201,.20));
+}
+.lighthouse-sketch .beam{
+  stroke-width:6.5;
+  opacity:.95;
+}
+.lighthouse-sketch .beam-soft{
+  stroke-width:3.5;
+  opacity:.5;
+}
+.lighthouse-sketch .spray{
+  stroke-width:4;
+  opacity:.82;
 }
 @media (min-width:820px){
   .lighthouse-sketch{
-    width:min(34vw,420px);
-    margin-top:42px;
+    width:min(42vw,560px);
+    margin-top:46px;
   }
 }
