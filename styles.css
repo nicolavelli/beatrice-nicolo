@@ -1,11 +1,11 @@
 :root{
-  --ivory:#f3ede5;
-  --ink:#171314;
-  --dahlia:#7b2034;
-  --dahlia-dark:#571421;
-  --rose:#b97889;
-  --muted:#746d68;
-  --line:rgba(23,19,20,.16);
+  --ivory:#F3E6C9;
+  --ink:#18352F;
+  --dahlia:#7B2034;
+  --dahlia-dark:#5C1728;
+  --rose:#B67888;
+  --muted:#6C746C;
+  --line:rgba(24,53,47,.16);
   --serif:"Bodoni Moda",Georgia,serif;
   --sans:"DM Sans",Arial,sans-serif;
 }
@@ -45,7 +45,7 @@ nav{display:none}
   overflow:hidden;
   min-height:100svh;
   color:var(--ivory);
-  background:#120f10;
+  background:#18352F;
 }
 .hero-fallback{
   position:absolute;
@@ -178,7 +178,7 @@ nav{display:none}
   letter-spacing:.22em;
   text-transform:uppercase;
 }
-.eyebrow.light{color:#ead4da}
+.eyebrow.light{color:#E7CFD5}
 .story-copy h2{
   margin:0 0 22px;
   font-family:var(--serif);
@@ -192,7 +192,7 @@ nav{display:none}
   margin:0;
   font-size:15px;
   line-height:1.7;
-  color:rgba(243,237,229,.78);
+  color:rgba(243,230,201,.78);
 }
 .story-number{
   position:absolute;
@@ -313,7 +313,7 @@ nav{display:none}
 }
 .venue-copy>p{
   max-width:560px;
-  color:rgba(243,237,229,.8);
+  color:rgba(243,230,201,.8);
   font-size:15px;
   line-height:1.75;
 }
@@ -321,7 +321,7 @@ nav{display:none}
   display:inline-block;
   margin-top:26px;
   padding-bottom:6px;
-  border-bottom:1px solid rgba(243,237,229,.45);
+  border-bottom:1px solid rgba(243,230,201,.45);
   text-decoration:none;
   font-size:11px;
   letter-spacing:.08em;
@@ -367,7 +367,7 @@ nav{display:none}
   align-items:center;
   gap:20px;
   padding:28px 24px;
-  background:#110e0f;
+  background:#10261F;
   color:var(--ivory);
 }
 .site-footer img{
@@ -380,7 +380,7 @@ nav{display:none}
   font-size:9px;
   letter-spacing:.16em;
   text-transform:uppercase;
-  color:rgba(243,237,229,.68);
+  color:rgba(243,230,201,.68);
 }
 
 .reveal{
@@ -402,7 +402,7 @@ nav{display:none}
   nav{display:flex;gap:28px}
   nav a{
     text-decoration:none;
-    color:rgba(243,237,229,.82);
+    color:rgba(243,230,201,.82);
     font-size:9px;
     font-weight:600;
     letter-spacing:.18em;
@@ -431,4 +431,41 @@ nav{display:none}
 @media (min-width:1200px){
   .hero-copy{max-width:1080px}
   .story-copy,.memory-copy{max-width:900px}
+}
+/* definitive wedding palette */
+:root{
+  --green:#18352F;
+  --green-deep:#10261F;
+  --vanilla:#F3E6C9;
+}
+.brand{
+  display:block;
+  padding:9px 10px 8px;
+  background:var(--vanilla);
+}
+.brand img{
+  width:58px;
+  height:auto;
+  object-fit:contain;
+}
+.hero-logo{
+  width:118px;
+  height:auto;
+  padding:14px;
+  background:var(--vanilla);
+  object-fit:contain;
+}
+.rsvp-copy img{
+  width:108px;
+  padding:12px;
+  background:var(--vanilla);
+}
+.site-footer img{
+  width:70px;
+  padding:10px;
+  background:var(--vanilla);
+}
+@media (min-width:820px){
+  .brand img{width:66px}
+  .hero-logo{width:142px}
 }
