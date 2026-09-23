@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#120f10">
+  <meta name="theme-color" content="#141011">
   <meta name="description" content="Beatrice e Nicolò — 7 dicembre 2026, Borgo Capietaglio, Pontida.">
   <title>Beatrice & Nicolò — 07.12.2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +13,10 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Beatrice e Nicolò, torna all'inizio">
-      <span class="brand-chip">
-        <img src="assets/monogramma-nb-bordeaux.png?v=4" alt="Monogramma N e B">
-      </span>
+    <a class="brand" href="#home" aria-label="Beatrice e Nicolò">
+      <img src="assets/monogramma-nb-bordeaux.png?v=6" alt="Monogramma N e B">
     </a>
-    <nav aria-label="Navigazione principale">
+    <nav>
       <a href="#giorno">Il giorno</a>
       <a href="#noi">Noi</a>
       <a href="#luogo">Il luogo</a>
@@ -28,111 +26,75 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-media">
-        <video autoplay muted loop playsinline preload="auto" class="hero-video">
-          <source src="assets/hero-video.mp4?v=4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
+      <div class="hero-fallback" aria-hidden="true"></div>
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+        <source src="assets/hero-video.mp4?v=6" type="video/mp4">
+      </video>
+      <div class="media-shade"></div>
+
+      <div class="hero-meta reveal">
+        <span>07 · 12 · 2026</span>
+        <span>Borgo Capietaglio · Pontida</span>
       </div>
 
-      <div class="hero-content reveal">
-        <span class="hero-logo-frame">
-          <img src="assets/monogramma-nb-bordeaux.png?v=4" alt="Monogramma N e B">
-        </span>
-        <p class="eyebrow light">07 dicembre 2026 · Borgo Capietaglio</p>
+      <div class="hero-copy reveal">
+        <img class="hero-logo" src="assets/monogramma-nb-bordeaux.png?v=6" alt="Monogramma N e B">
         <h1>Beatrice <em>&amp;</em> Nicolò</h1>
-        <p class="hero-copy">Una giornata elegante, intensa, tutta da vivere insieme.</p>
+        <p>Una giornata da vivere insieme.</p>
       </div>
 
-      <div class="hero-date" aria-hidden="true">
-        <span>07</span><i>·</i><span class="outline">12</span>
-      </div>
-
-      <a class="scroll-cue" href="#manifesto">
-        <span>Scopri</span>
-        <span class="scroll-line"></span>
-      </a>
+      <div class="hero-number" aria-hidden="true">07</div>
     </section>
 
-    <section class="manifesto" id="manifesto">
-      <div class="section-index">01</div>
-      <div class="manifesto-grid">
-        <div class="manifesto-copy reveal">
-          <p class="eyebrow">L'invito</p>
-          <h2>Un solo luogo.<br>Una giornata intera.</h2>
-          <p>
-            Cerimonia, aperitivo, pranzo e festa saranno tutti a Borgo Capietaglio.
-            Qui raccoglieremo solo ciò che serve davvero per essere con noi.
-          </p>
-        </div>
-        <div class="manifesto-mark reveal">
-          <img src="assets/monogramma-nb-bordeaux.png?v=4" alt="" aria-hidden="true">
-        </div>
-      </div>
+    <section class="quote-full">
+      <img src="assets/photo-blindfold.webp?v=6" alt="Beatrice e Nicolò insieme" class="bg-image">
+      <div class="media-shade quote-shade"></div>
+      <blockquote class="quote-copy reveal">
+        <span class="quote-glyph" aria-hidden="true">“</span>
+        <p>
+          L'Amore è sapere che non possiamo scegliere le tempeste che incontreremo,
+          ma possiamo scegliere di affrontarle insieme e trovare, anche lì, la nostra luce.
+        </p>
+        <footer><strong>BEATRICE &amp; NICOLÒ</strong></footer>
+      </blockquote>
     </section>
 
-    <section class="quote-section">
-      <figure class="quote-photo reveal">
-        <img src="assets/photo-blindfold.webp?v=4" alt="Beatrice e Nicolò insieme">
-      </figure>
-      <div class="quote-panel">
-        <div class="quote-mark" aria-hidden="true">“</div>
-        <blockquote class="wedding-quote reveal">
-          <p>
-            “L'Amore è sapere che non possiamo scegliere le tempeste che incontreremo,
-            ma possiamo scegliere di affrontarle insieme e trovare, anche lì, la nostra luce.”
-          </p>
-          <footer class="quote-author"><strong>Nicolò e Beatrice</strong></footer>
-        </blockquote>
-      </div>
-    </section>
-
-    <section class="story" id="noi">
-      <div class="section-index light">02</div>
+    <section class="story-full" id="noi">
+      <img src="assets/photo-vineyard.webp?v=6" alt="Beatrice tra i filari" class="bg-image">
+      <div class="media-shade story-shade"></div>
       <div class="story-copy reveal">
         <p class="eyebrow light">Noi</p>
         <h2>Eleganti, sì.<br>Ma sempre noi.</h2>
         <p>
-          Il sito seguirà la stessa regia del matrimonio: pochi elementi, immagini forti,
-          Red Dahlia, avorio e nero, con una presenza grafica netta ma mai ostentata.
+          Pochi elementi, immagini forti e una sola identità visiva:
+          Red Dahlia, avorio e nero.
         </p>
       </div>
-
-      <div class="story-media reveal">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="assets/hero-video.mp4?v=4" type="video/mp4">
-        </video>
-        <div class="story-caption">
-          <span>Beatrice & Nicolò</span>
-          <span>07 · 12 · 2026</span>
-        </div>
-      </div>
+      <div class="story-number" aria-hidden="true">N+B</div>
     </section>
 
     <section class="day" id="giorno">
-      <div class="section-head reveal">
-        <p class="eyebrow">03 · Il giorno</p>
-        <h2>7 dicembre</h2>
+      <div class="day-head reveal">
+        <p class="eyebrow">Il giorno</p>
+        <h2>7 dicembre 2026</h2>
       </div>
 
-      <div class="schedule reveal">
-        <article class="schedule-item">
+      <div class="schedule">
+        <article class="schedule-item reveal">
           <time>11:30</time>
           <div>
             <h3>Arrivo</h3>
             <p>Accoglienza degli ospiti a Borgo Capietaglio.</p>
           </div>
         </article>
-
-        <article class="schedule-item">
+        <article class="schedule-item reveal">
           <time>12:00</time>
           <div>
             <h3>Cerimonia</h3>
             <p>Rito civile in location.</p>
           </div>
         </article>
-
-        <article class="schedule-item">
+        <article class="schedule-item reveal">
           <time>poi</time>
           <div>
             <h3>Aperitivo · Pranzo · Festa</h3>
@@ -140,44 +102,49 @@
           </div>
         </article>
       </div>
+
+      <div class="day-graphic" aria-hidden="true">12</div>
+    </section>
+
+    <section class="memory-full">
+      <img src="assets/photo-selfie.webp?v=6" alt="Beatrice e Nicolò durante un viaggio" class="bg-image">
+      <div class="media-shade memory-shade"></div>
+      <div class="memory-copy reveal">
+        <p class="eyebrow light">07 · 12 · 2026</p>
+        <p class="memory-line">Una giornata elegante.<br>Una festa che ci somigli.</p>
+      </div>
     </section>
 
     <section class="venue" id="luogo">
-      <div class="venue-graphic" aria-hidden="true">B</div>
+      <div class="venue-letter" aria-hidden="true">B</div>
       <div class="venue-copy reveal">
-        <p class="eyebrow light">04 · Il luogo</p>
+        <p class="eyebrow light">Il luogo</p>
         <h2>Borgo<br>Capietaglio</h2>
         <p class="venue-meta">Pontida · Bergamo</p>
         <p>
-          Qui si svolgerà l'intera giornata. Prima del matrimonio aggiungeremo
-          parcheggi, indicazioni e tutte le informazioni pratiche definitive.
+          Cerimonia, pranzo e festa si svolgeranno tutti qui.
+          Prima del matrimonio aggiungeremo indicazioni, parcheggi e dettagli pratici.
         </p>
         <a class="venue-link" href="https://www.google.com/maps/search/?api=1&query=Borgo+Capietaglio+Pontida" target="_blank" rel="noopener">
-          Apri in Google Maps <span>↗</span>
+          Apri in Google Maps ↗
         </a>
       </div>
     </section>
 
     <section class="rsvp" id="rsvp">
-      <div class="section-index">05</div>
-      <div class="rsvp-box reveal">
-        <span class="rsvp-logo-frame">
-          <img src="assets/monogramma-nb-bordeaux.png?v=4" alt="" aria-hidden="true">
-        </span>
+      <div class="rsvp-copy reveal">
+        <img src="assets/monogramma-nb-bordeaux.png?v=6" alt="" aria-hidden="true">
         <p class="eyebrow">Conferma</p>
         <h2>Ci sarete?</h2>
-        <p>La conferma RSVP sarà attivata qui, con una soluzione semplice e riservata agli invitati.</p>
-        <button class="button" disabled aria-disabled="true">RSVP · presto disponibile</button>
+        <p>La conferma RSVP sarà attivata qui quando apriremo ufficialmente le adesioni.</p>
+        <button disabled>RSVP · presto disponibile</button>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <img src="assets/monogramma-nb-bordeaux.png?v=4" alt="Monogramma N e B" class="footer-logo">
-    <div>
-      <p>Beatrice & Nicolò</p>
-      <p>07 · 12 · 2026 · Borgo Capietaglio</p>
-    </div>
+    <img src="assets/monogramma-nb-bordeaux.png?v=6" alt="Monogramma N e B">
+    <p>Beatrice & Nicolò · 07.12.2026</p>
   </footer>
 
   <script src="script.js"></script>
