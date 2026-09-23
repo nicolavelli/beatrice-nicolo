@@ -196,6 +196,52 @@ h2{
   color:rgba(123,32,52,.05);
 }
 
+.quote-section{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  min-height:620px;
+  padding:110px 24px;
+  background:var(--dahlia-dark);
+  color:var(--paper);
+}
+.quote-mark{
+  position:absolute;
+  left:-.05em;
+  top:-.23em;
+  font-family:var(--serif);
+  font-size:clamp(250px,70vw,760px);
+  line-height:1;
+  color:rgba(242,238,231,.055);
+  user-select:none;
+}
+.wedding-quote{
+  position:relative;
+  z-index:2;
+  width:min(100%,980px);
+  margin:0;
+  text-align:center;
+}
+.wedding-quote p{
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(31px,7.6vw,72px);
+  font-style:italic;
+  font-weight:400;
+  line-height:1.14;
+  letter-spacing:-.025em;
+}
+.quote-author{
+  margin-top:34px;
+  font-family:var(--sans);
+  font-size:10px;
+  font-style:normal;
+  font-weight:600;
+  letter-spacing:.24em;
+  color:#e9cbd2;
+}
+
 .day{
   padding:105px 24px 115px;
   border-bottom:1px solid var(--line);
@@ -419,6 +465,7 @@ footer{
   .statement{padding:150px max(7vw,60px)}
   .statement-index{right:max(7vw,60px);top:42px}
   .statement-copy{margin-left:24%}
+  .quote-section{min-height:760px;padding:150px max(10vw,80px)}
   .day{
     display:grid;
     grid-template-columns:1fr 1.6fr;
