@@ -374,155 +374,62 @@ nav{display:none}
   .hero-copy{max-width:1080px}
   .identity-copy{margin-right:8vw}
 }
-.lighthouse-sketch{
+
+.lighthouse-art{
   position:absolute;
-  right:-18px;
-  bottom:22px;
-  width:min(50vw,330px);
-  margin:0;
-  color:var(--vanilla);
-  opacity:.92;
+  right:0;
+  bottom:0;
+  width:min(44vw,520px);
   pointer-events:none;
+  overflow:hidden;
 }
-.lighthouse-sketch svg{
+.lighthouse-art img{
   display:block;
   width:100%;
   height:auto;
-  overflow:visible;
-}
-.lighthouse-line{
-  stroke-width:2.15;
-}
-.lighthouse-sketch path,
-.lighthouse-sketch rect{
-  vector-effect:non-scaling-stroke;
-}
-.lighthouse-sketch .detail{
-  stroke-width:1.25;
-  opacity:.58;
-}
-.lighthouse-sketch .wave{
-  stroke-width:2.4;
-  opacity:.9;
-}
-.lighthouse-sketch .spray{
-  stroke-width:1.75;
-  opacity:.68;
-}
-.lighthouse-sketch .beam-core{
-  stroke-width:3.1;
+  mix-blend-mode:screen;
   opacity:.92;
 }
-.lighthouse-sketch .beam-edge{
-  stroke-width:1.3;
-  opacity:.42;
-}
 .quote-copy{
-  max-width:70%;
-}
-.quote-copy footer{
   position:relative;
   z-index:3;
+  max-width:72%;
 }
 @media (max-width:819px){
   .quote-copy{
     max-width:100%;
-    padding-right:24vw;
+    padding-right:20vw;
   }
-  .lighthouse-sketch{
-    right:-42px;
-    bottom:28px;
-    width:min(58vw,270px);
-    opacity:.75;
+  .lighthouse-art{
+    width:min(48vw,270px);
+    right:-22px;
   }
 }
 @media (min-width:820px){
   .quote-section{
-    padding-right:max(30vw,360px);
+    padding-right:max(26vw,320px);
   }
-  .lighthouse-sketch{
-    right:3vw;
-    bottom:4vh;
-    width:min(31vw,430px);
+  .lighthouse-art{
+    width:min(34vw,520px);
+    right:2vw;
+    bottom:1vh;
   }
 }
 
-.dress-palette{
-  min-height:84svh;
-  display:grid;
-  align-content:center;
-  gap:58px;
-  padding:110px 22px;
-  background:#FFFDF8;
-  color:var(--green);
-}
-.dress-intro{
-  max-width:800px;
-}
-.dress-intro h2{
-  margin:0;
-  font-family:var(--serif);
-  font-size:clamp(48px,11vw,104px);
-  font-weight:500;
-  line-height:.92;
-  letter-spacing:-.05em;
-}
-.dress-intro>p:last-child{
-  max-width:620px;
-  margin:26px 0 0;
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.75;
-}
+/* campioni colore più piccoli */
 .colour-cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  max-width:760px;
-}
-.colour-card{
-  margin:0;
+  max-width:380px;
 }
 .colour-swatch{
-  aspect-ratio:1/1;
-  border:1px solid rgba(24,53,47,.10);
+  width:50%;
+  margin:0 auto;
 }
-.swatch-dahlia{background:#7B2034}
-.swatch-green{background:#18352F}
-.swatch-vanilla{background:#F3E6C9}
 .colour-card p{
-  margin:12px 0 0;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-}
-.site-footer{
-  justify-content:flex-end;
+  text-align:center;
 }
 @media (min-width:820px){
-  .dress-palette{
-    padding:150px max(7vw,60px);
-    grid-template-columns:1.15fr .85fr;
-    align-items:center;
-    column-gap:8vw;
-  }
   .colour-cards{
-    gap:16px;
+    max-width:380px;
+    justify-self:end;
   }
-}
-
-.lighthouse-sketch .vangogh .sky{
-  stroke-width:1.1;
-  opacity:.34;
-}
-.lighthouse-sketch .vangogh .shade{
-  stroke-width:1.05;
-  opacity:.46;
-}
-.lighthouse-sketch .vangogh .wave{
-  stroke-width:1.9;
-}
-.lighthouse-sketch .vangogh .sea{
-  stroke-width:1.3;
 }
