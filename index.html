@@ -26,21 +26,19 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-meta reveal">
-        <span>Beatrice & Nicolò</span>
-        <span>Borgo Capietaglio · Pontida</span>
-      </div>
+      <img class="hero-mark" src="assets/monogramma-nb.svg?v=8" alt="" aria-hidden="true">
 
-      <div class="hero-date-composition" aria-hidden="true">
-        <span class="date-07">07</span>
-        <span class="date-divider">/</span>
-        <span class="date-12">12</span>
-        <span class="date-2026">2026</span>
+      <div class="hero-meta reveal">
+        <span>07 · 12 · 2026</span>
+        <span>Borgo Capietaglio · Pontida</span>
       </div>
 
       <div class="hero-copy reveal">        <p class="eyebrow light">Beatrice & Nicolò</p>
         <h1>Una giornata.<br>Un segno.<br>La nostra storia.</h1>
-      </div>    </section>
+      </div>
+
+      <div class="hero-date" aria-hidden="true">07</div>
+    </section>
 
     <section class="quote-section" id="frase">
       <div class="quote-grid">
@@ -51,37 +49,62 @@
             possiamo scegliere di affrontarle insieme e trovare, anche lì, la nostra luce.
           </p>
           <div class="lighthouse-sketch" aria-hidden="true">
-            <svg viewBox="0 0 300 390" role="presentation">
-              <g class="lighthouse-line" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                <path class="beam-core" d="M168 82 L286 42"/>
-                <path class="beam-edge" d="M168 88 L294 66"/>
+            <svg viewBox="0 0 360 500" role="presentation">
+              <g class="pencil" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <!-- light beam -->
+                <path class="beam beam-main" d="M205 82 L345 44"/>
+                <path class="beam beam-soft" d="M205 88 L350 67"/>
 
-                <path d="M145 104 L153 85 L180 85 L188 104"/>
-                <path d="M150 85 L150 68 L183 68 L183 85"/>
-                <path d="M155 68 L161 55 L174 55 L181 68"/>
-                <path d="M147 108 L190 108"/>
-                <path d="M151 113 L187 113"/>
+                <!-- lantern and gallery -->
+                <path d="M171 117 L180 92 L221 92 L232 117"/>
+                <path d="M176 92 L176 67 L225 67 L225 92"/>
+                <path d="M183 67 L190 51 L212 51 L220 67"/>
+                <path d="M191 51 L201 39 L212 51"/>
+                <path d="M174 119 L233 119"/>
+                <path d="M166 126 L239 126"/>
+                <path d="M170 126 L170 139 M182 126 L182 139 M194 126 L194 139 M206 126 L206 139 M218 126 L218 139 M230 126 L230 139"/>
+                <path d="M165 139 L240 139"/>
 
-                <path d="M155 113 L145 300"/>
-                <path d="M183 113 L193 300"/>
-                <path d="M145 300 C155 310 184 310 193 300"/>
+                <!-- cylindrical tower -->
+                <path d="M177 139 C173 187 170 237 168 288 C166 333 165 376 166 414"/>
+                <path d="M229 139 C234 190 237 241 239 292 C241 338 241 379 239 414"/>
+                <path d="M166 414 C181 424 222 424 239 414"/>
 
-                <path d="M157 155 L181 155"/>
-                <path d="M154 210 L184 210"/>
-                <path d="M151 265 L188 265"/>
+                <!-- windows -->
+                <rect x="197" y="190" width="12" height="27" rx="1.5"/>
+                <rect x="196" y="260" width="12" height="27" rx="1.5"/>
+                <rect x="195" y="330" width="12" height="27" rx="1.5"/>
 
-                <path d="M163 173 L169 173"/>
-                <path d="M166 229 L172 229"/>
+                <!-- pencil shading on tower -->
+                <path class="shade" d="M184 151 L177 401"/>
+                <path class="shade" d="M190 148 L184 405"/>
+                <path class="shade" d="M218 148 L229 407"/>
+                <path class="shade" d="M224 150 L235 403"/>
+                <path class="shade" d="M181 170 L226 170 M177 232 L233 232 M173 302 L237 302 M169 373 L239 373"/>
 
-                <path class="rock" d="M128 305 C140 295 152 298 160 305 C169 296 181 297 190 306 C201 299 213 303 220 313"/>
+                <!-- base -->
+                <path d="M151 415 C165 402 180 404 190 414 C201 403 216 404 227 414 C239 405 253 410 261 421"/>
+                <path d="M139 439 C158 421 179 426 192 437 C207 424 229 428 243 440 C257 431 277 437 288 451"/>
 
-                <path class="wave" d="M41 320 C75 297 104 302 127 326 C145 344 166 345 188 328"/>
-                <path class="wave" d="M174 329 C199 302 227 300 251 323 C267 339 282 340 294 333"/>
-                <path class="wave" d="M26 351 C61 331 93 337 118 357"/>
-                <path class="wave" d="M184 359 C213 335 245 338 277 358"/>
+                <!-- main breaking wave, inspired by reference -->
+                <path class="wave" d="M24 384 C58 345 92 338 124 357 C148 371 160 397 164 429"/>
+                <path class="wave" d="M84 398 C108 368 133 361 157 373"/>
+                <path class="wave" d="M241 428 C251 381 273 348 306 336 C329 327 347 332 359 344"/>
+                <path class="wave" d="M247 411 C266 379 287 365 313 362"/>
 
-                <path class="spray" d="M110 317 C97 300 94 283 101 268"/>
-                <path class="spray" d="M226 318 C240 299 241 282 235 267"/>
+                <!-- sea -->
+                <path class="sea" d="M12 455 C48 438 79 443 108 458 C136 471 165 470 190 457 C217 443 244 447 270 460 C298 474 325 471 352 458"/>
+                <path class="sea" d="M20 476 C57 461 90 466 118 479 C144 491 172 489 199 476 C225 463 252 465 282 478 C307 488 330 486 349 478"/>
+
+                <!-- spray -->
+                <path class="spray" d="M127 357 C108 329 107 304 120 283"/>
+                <path class="spray" d="M145 369 C129 339 133 313 148 294"/>
+                <path class="spray" d="M274 356 C291 327 290 300 278 278"/>
+                <path class="spray" d="M292 346 C311 321 314 298 304 279"/>
+
+                <!-- diagonal hatch / chiaroscuro -->
+                <path class="hatch" d="M175 188 L191 174 M173 218 L191 202 M171 250 L190 232 M170 284 L190 266 M169 320 L190 302 M168 355 L190 337 M167 392 L190 374"/>
+                <path class="hatch" d="M214 186 L229 172 M216 218 L232 202 M218 252 L234 235 M220 286 L236 270 M222 321 L238 305 M223 356 L239 341 M224 390 L239 377"/>
               </g>
             </svg>
           </div>
