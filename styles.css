@@ -33,6 +33,15 @@ h1,h2,h3,p{margin-top:0}
   justify-content:space-between;
   padding:22px 24px;
 }
+.brand{
+  display:grid;
+  place-items:center;
+  width:76px;
+  height:64px;
+  padding:8px 11px;
+  background:var(--ivory);
+  text-decoration:none;
+}
 .brand img{
   width:54px;
   height:auto;
@@ -86,10 +95,12 @@ nav{display:none}
   max-width:1000px;
 }
 .hero-logo{
-  width:90px;
+  width:132px;
   height:auto;
   object-fit:contain;
-  margin-bottom:24px;
+  margin-bottom:28px;
+  padding:13px 16px;
+  background:var(--ivory);
 }
 .hero h1{
   margin:0;
@@ -339,9 +350,9 @@ nav{display:none}
   text-align:center;
 }
 .rsvp-copy img{
-  width:88px;
+  width:118px;
   height:auto;
-  margin:0 auto 30px;
+  margin:0 auto 32px;
   object-fit:contain;
 }
 .rsvp-copy p:not(.eyebrow){
@@ -371,9 +382,11 @@ nav{display:none}
   color:var(--ivory);
 }
 .site-footer img{
-  width:52px;
+  width:74px;
   height:auto;
   object-fit:contain;
+  padding:8px 10px;
+  background:var(--ivory);
 }
 .site-footer p{
   margin:0;
@@ -469,3 +482,12 @@ nav{display:none}
   .brand img{width:66px}
   .hero-logo{width:142px}
 }
+
+/* Palette definitiva matrimonio */
+.hero,.quote-full,.story-full,.memory-full{background-color:#18352F}
+.media-shade{background:linear-gradient(180deg,rgba(24,53,47,.10),rgba(24,53,47,.28) 40%,rgba(24,53,47,.82) 100%)}
+.quote-shade{background:linear-gradient(90deg,rgba(24,53,47,.88),rgba(24,53,47,.48) 60%,rgba(24,53,47,.28))}
+.story-shade,.memory-shade{background:linear-gradient(180deg,rgba(24,53,47,.05),rgba(24,53,47,.24) 42%,rgba(24,53,47,.84))}
+.venue{background:#7B2034}
+.rsvp,.day{background:#F3E6C9}
+.site-footer{background:#18352F}
