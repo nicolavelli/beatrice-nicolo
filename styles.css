@@ -511,3 +511,18 @@ nav{display:none}
     gap:16px;
   }
 }
+
+.lighthouse-sketch .vangogh .sky{
+  stroke-width:1.1;
+  opacity:.34;
+}
+.lighthouse-sketch .vangogh .shade{
+  stroke-width:1.05;
+  opacity:.46;
+}
+.lighthouse-sketch .vangogh .wave{
+  stroke-width:1.9;
+}
+.lighthouse-sketch .vangogh .sea{
+  stroke-width:1.3;
+}
