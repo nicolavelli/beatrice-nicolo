@@ -35,14 +35,14 @@ h1,h2,h3,p{margin-top:0}
 .brand{
   display:flex;
   align-items:center;
-  gap:4px;
   text-decoration:none;
-  font-family:var(--sans);
-  font-size:15px;
-  font-weight:600;
-  letter-spacing:-.03em;
 }
-.brand-plus{color:var(--dahlia);font-weight:400}
+.brand-logo{
+  display:block;
+  width:46px;
+  height:auto;
+  object-fit:contain;
+}
 nav{display:none}
 
 .hero{
@@ -102,6 +102,12 @@ nav{display:none}
   position:relative;
   z-index:2;
   width:100%;
+}
+.hero-logo{
+  display:block;
+  width:92px;
+  height:auto;
+  margin:0 0 22px;
 }
 .micro,.hero-date,.kicker{
   font-size:10px;
@@ -186,14 +192,15 @@ h2{
   font-size:15px;
   line-height:1.75;
 }
-.statement-mark{
+.statement-emblem{
   position:absolute;
-  right:-11%;
-  bottom:-3%;
-  font-size:clamp(130px,40vw,410px);
-  font-weight:600;
-  letter-spacing:-.09em;
-  color:rgba(123,32,52,.05);
+  right:-8%;
+  bottom:-8%;
+  width:clamp(220px,48vw,520px);
+  height:auto;
+  opacity:.055;
+  pointer-events:none;
+  user-select:none;
 }
 
 .quote-section{
@@ -480,12 +487,11 @@ footer{
   padding:42px 24px;
   border-top:1px solid var(--line);
 }
-.footer-brand{
-  font-size:25px;
-  font-weight:600;
-  letter-spacing:-.06em;
+.footer-logo{
+  display:block;
+  width:66px;
+  height:auto;
 }
-.footer-brand span{color:var(--dahlia);font-weight:400}
 .footer-copy{text-align:right}
 .footer-copy p{
   margin:0 0 3px;
@@ -532,6 +538,8 @@ footer{
   nav a:hover::after{right:0}
   .hero{padding:130px 42px 70px}
   .hero-copy{max-width:920px}
+  .brand-logo{width:54px}
+  .hero-logo{width:116px}
   .hero-accent{width:28px;height:53%}
   .scroll-cue{right:42px;bottom:34px}
   .date-year{right:45px}
