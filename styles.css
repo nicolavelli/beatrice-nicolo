@@ -379,16 +379,16 @@ nav{display:none}
   position:absolute;
   right:0;
   bottom:0;
-  width:min(44vw,520px);
+  width:min(62vw,920px);
   pointer-events:none;
-  overflow:hidden;
+  overflow:visible;
+  z-index:1;
 }
 .lighthouse-art img{
   display:block;
   width:100%;
   height:auto;
-  mix-blend-mode:screen;
-  opacity:.92;
+  opacity:1;
 }
 .quote-copy{
   position:relative;
@@ -401,18 +401,19 @@ nav{display:none}
     padding-right:20vw;
   }
   .lighthouse-art{
-    width:min(48vw,270px);
-    right:-22px;
+    width:min(70vw,430px);
+    right:-10vw;
+    bottom:0;
   }
 }
 @media (min-width:820px){
   .quote-section{
-    padding-right:max(26vw,320px);
+    padding-right:max(28vw,340px);
   }
   .lighthouse-art{
-    width:min(34vw,520px);
-    right:2vw;
-    bottom:1vh;
+    width:min(52vw,900px);
+    right:-2vw;
+    bottom:-2vh;
   }
 }
 
@@ -432,4 +433,24 @@ nav{display:none}
     max-width:380px;
     justify-self:end;
   }
+}
+
+.quote-section{
+  background:#7B2034;
+}
+.lighthouse-art::before{
+  content:"";
+  position:absolute;
+  inset:-3%;
+  background:radial-gradient(circle at 70% 60%,rgba(123,32,52,0) 45%,#7B2034 100%);
+  z-index:1;
+  pointer-events:none;
+}
+.lighthouse-art img{
+  position:relative;
+  z-index:0;
+}
+.quote-grid{
+  position:relative;
+  z-index:3;
 }
