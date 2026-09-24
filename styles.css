@@ -834,3 +834,59 @@ nav{display:none}
     background-size:min(58vw,780px) auto !important;
   }
 }
+
+/* FIX DEFINITIVO FARO: elemento reale sopra il fondo, asset esatto con trasparenza */
+.quote-section{
+  position:relative !important;
+  overflow:hidden !important;
+  background:#7B2034 !important;
+  background-image:none !important;
+}
+.quote-lighthouse-exact{
+  display:block !important;
+  position:absolute !important;
+  right:-1.5vw !important;
+  bottom:-1vh !important;
+  width:min(68vw,980px) !important;
+  height:auto !important;
+  max-width:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  mix-blend-mode:normal !important;
+  filter:none !important;
+  z-index:1 !important;
+  pointer-events:none !important;
+}
+.quote-grid{
+  position:relative !important;
+  z-index:2 !important;
+}
+.quote-copy{
+  position:relative !important;
+  z-index:2 !important;
+  max-width:60% !important;
+}
+@media (max-width:819px){
+  .quote-section{
+    padding-bottom:230px !important;
+  }
+  .quote-lighthouse-exact{
+    right:-16vw !important;
+    bottom:-1vh !important;
+    width:min(112vw,620px) !important;
+  }
+  .quote-copy{
+    max-width:100% !important;
+    padding-right:0 !important;
+  }
+}
+@media (min-width:820px){
+  .quote-section{
+    padding-right:max(34vw,420px) !important;
+  }
+  .quote-lighthouse-exact{
+    right:-1vw !important;
+    bottom:-2vh !important;
+    width:min(62vw,980px) !important;
+  }
+}
