@@ -736,3 +736,38 @@ nav{display:none}
     opacity:.9;
   }
 }
+
+/* Faro definitivo, vettorializzato dalla reference: sempre visibile e senza rettangolo */
+.quote-section{
+  background:
+    url('assets/lighthouse-vector.svg?v=14') right bottom / min(58vw,940px) auto no-repeat,
+    #7B2034 !important;
+}
+.quote-copy{
+  max-width:68%;
+}
+@media (max-width:819px){
+  .quote-section{
+    padding-bottom:190px;
+    background:
+      url('assets/lighthouse-vector.svg?v=14') right bottom / min(96vw,470px) auto no-repeat,
+      #7B2034 !important;
+  }
+  .quote-copy{
+    max-width:100%;
+    padding-right:0;
+  }
+}
+@media (min-width:820px){
+  .quote-section{
+    padding-right:max(34vw,420px);
+    background:
+      url('assets/lighthouse-vector.svg?v=14') right bottom / min(56vw,940px) auto no-repeat,
+      #7B2034 !important;
+  }
+}
+
+/* Logo location: a destra della quinta schermata */
+.venue-location-logo{
+  display:block !important;
+}
