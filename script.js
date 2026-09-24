@@ -124,9 +124,6 @@ if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
 
 const giftTicketOpen = document.querySelector('.gift-ticket-open');
 const giftTicket = document.querySelector('#gift-ticket');
-const giftCopyIban = document.querySelector('.gift-copy-iban');
-const giftIban = document.querySelector('.gift-iban');
-
 if (giftTicketOpen && giftTicket) {
   giftTicketOpen.addEventListener('click', () => {
     const opening = giftTicket.hidden;
