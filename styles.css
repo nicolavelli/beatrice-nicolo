@@ -771,3 +771,33 @@ nav{display:none}
 .venue-location-logo{
   display:block !important;
 }
+
+/* DEFINITIVO: immagine faro fornita dall'utente, senza reinterpretazioni */
+.quote-section{
+  background:
+    url('assets/lighthouse-final.webp?v=15') right bottom / min(76vw,1180px) auto no-repeat,
+    #7B2034 !important;
+}
+.quote-copy{
+  max-width:64% !important;
+}
+@media (max-width:819px){
+  .quote-section{
+    padding-bottom:230px !important;
+    background:
+      url('assets/lighthouse-final.webp?v=15') right bottom / min(118vw,620px) auto no-repeat,
+      #7B2034 !important;
+  }
+  .quote-copy{
+    max-width:100% !important;
+    padding-right:0 !important;
+  }
+}
+@media (min-width:820px){
+  .quote-section{
+    padding-right:max(38vw,470px) !important;
+    background:
+      url('assets/lighthouse-final.webp?v=15') right bottom / min(70vw,1180px) auto no-repeat,
+      #7B2034 !important;
+  }
+}
