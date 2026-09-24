@@ -801,3 +801,36 @@ nav{display:none}
       #7B2034 !important;
   }
 }
+
+/* FARO FINALE — usa esattamente l'immagine fornita dall'utente */
+.quote-section{
+  background-color:#7B2034 !important;
+  background-image:url('assets/lighthouse-final-exact.webp?v=16') !important;
+  background-repeat:no-repeat !important;
+  background-position:right bottom !important;
+  background-size:min(62vw,780px) auto !important;
+}
+.quote-grid{
+  position:relative;
+  z-index:2;
+}
+.quote-copy{
+  max-width:62% !important;
+}
+@media (max-width:819px){
+  .quote-section{
+    padding-bottom:220px !important;
+    background-position:right bottom !important;
+    background-size:min(108vw,560px) auto !important;
+  }
+  .quote-copy{
+    max-width:100% !important;
+    padding-right:0 !important;
+  }
+}
+@media (min-width:820px){
+  .quote-section{
+    padding-right:max(34vw,420px) !important;
+    background-size:min(58vw,780px) auto !important;
+  }
+}
