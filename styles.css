@@ -690,3 +690,49 @@ nav{display:none}
       #7B2034 !important;
   }
 }
+
+/* Faro trasparente: nessun fondo immagine, solo faro e onde */
+.quote-section{
+  background:
+    url('assets/lighthouse-transparent.webp?v=13') right bottom / min(58vw,900px) auto no-repeat,
+    #7B2034 !important;
+}
+@media (max-width:819px){
+  .quote-section{
+    background:
+      url('assets/lighthouse-transparent.webp?v=13') right bottom / min(78vw,420px) auto no-repeat,
+      #7B2034 !important;
+  }
+  .quote-copy{
+    padding-right:16vw;
+  }
+}
+@media (min-width:820px){
+  .quote-section{
+    padding-right:max(30vw,360px);
+    background:
+      url('assets/lighthouse-transparent.webp?v=13') right bottom / min(52vw,900px) auto no-repeat,
+      #7B2034 !important;
+  }
+}
+
+/* Logo ufficiale della location nella quinta schermata */
+.venue-location-logo{
+  position:absolute;
+  right:5vw;
+  top:50%;
+  z-index:3;
+  width:min(17vw,210px);
+  height:auto;
+  transform:translateY(-50%);
+  opacity:.96;
+}
+@media (max-width:819px){
+  .venue-location-logo{
+    right:18px;
+    top:26px;
+    width:92px;
+    transform:none;
+    opacity:.9;
+  }
+}
