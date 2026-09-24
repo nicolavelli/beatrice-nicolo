@@ -226,7 +226,7 @@
                 <dd class="gift-iban" data-iban="IT60X0542811101000000123456">IT60 X054 2811 1010 0000 0123 456</dd>
               </div>
             </dl>
-            <button class="gift-copy-iban" type="button" onclick="copyGiftIban(this)">Copia IBAN</button>
+            <button class="gift-copy-iban" type="button" onclick="copyGiftIban(this); return false;">Copia IBAN</button>
             <div class="gift-barcode" aria-hidden="true"></div>
           </aside>
         </article>
@@ -343,110 +343,61 @@
     <p>Beatrice & Nicolò · 07.12.2026</p>
   </footer>
 
-  <script src="script.js?v=30"></script>
-<script>
-  function copyGiftIban(button) {
-    var iban = 'IT60X0542811101000000123456';
-
-    function success() {
-      button.classList.remove('is-copied');
-      void button.offsetWidth;
-      button.classList.add('is-copied');
-      button.textContent = 'IBAN copiato';
-      window.setTimeout(function () {
-        button.classList.remove('is-copied');
-        button.textContent = 'Copia IBAN';
-      }, 1700);
-    }
-
-    function fallback() {
-      var input = document.createElement('textarea');
-      input.value = iban;
-      input.style.position = 'fixed';
-      input.style.top = '0';
-      input.style.left = '-9999px';
-      input.style.opacity = '0';
-      document.body.appendChild(input);
-      input.focus();
-      input.select();
-      input.setSelectionRange(0, input.value.length);
-      var copied = false;
-      try {
-        copied = document.execCommand('copy');
-      } catch (e) {}
-      document.body.removeChild(input);
-      if (copied) {
-        success();
-      } else {
-        button.textContent = 'Tieni premuto sull\'IBAN';
-        window.setTimeout(function () {
-          button.textContent = 'Copia IBAN';
-        }, 1700);
-      }
-    }
-
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(iban).then(success).catch(fallback);
-    } else {
-      fallback();
-    }
-  }
-</script>
+  <script src="script.js?v=31"></script>
 <script>
 function copyGiftIban(button) {
-  const ibanEl = document.querySelector('.gift-iban');
-  const iban = ((ibanEl && ibanEl.dataset.iban) || '').trim();
-  if (!iban) return;
+  var ibanEl = document.querySelector('.gift-iban');
+  var iban = ibanEl ? (ibanEl.getAttribute('data-iban') || '').trim() : '';
+  if (!iban) {
+    button.textContent = 'IBAN non disponibile';
+    setTimeout(function(){ button.textContent = 'Copia IBAN'; }, 1700);
+    return false;
+  }
 
-  const success = () => {
+  function showCopied() {
     button.classList.remove('is-copied');
     void button.offsetWidth;
     button.classList.add('is-copied');
     button.textContent = 'IBAN copiato';
-    setTimeout(() => {
+    setTimeout(function () {
       button.classList.remove('is-copied');
       button.textContent = 'Copia IBAN';
     }, 1700);
-  };
+  }
 
-  const fail = () => {
-    button.textContent = 'Copia non riuscita';
-    setTimeout(() => {
-      button.textContent = 'Copia IBAN';
-    }, 1700);
-  };
-
-  const fallbackCopy = () => {
-    const area = document.createElement('textarea');
+  function legacyCopy() {
+    var area = document.createElement('textarea');
     area.value = iban;
+    area.setAttribute('readonly', '');
     area.style.position = 'fixed';
-    area.style.opacity = '0';
-    area.style.pointerEvents = 'none';
-    area.style.left = '0';
+    area.style.left = '-9999px';
     area.style.top = '0';
+    area.style.fontSize = '16px';
     document.body.appendChild(area);
     area.focus();
     area.select();
     area.setSelectionRange(0, area.value.length);
-
-    let copied = false;
-    try {
-      copied = document.execCommand('copy');
-    } catch (error) {
-      copied = false;
-    }
-
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
     document.body.removeChild(area);
-    return copied;
-  };
+    return ok;
+  }
 
   if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(iban)
-      .then(success)
-      .catch(() => fallbackCopy() ? success() : fail());
+    navigator.clipboard.writeText(iban).then(showCopied).catch(function () {
+      if (legacyCopy()) showCopied();
+      else {
+        button.textContent = 'Copia non riuscita';
+        setTimeout(function(){ button.textContent = 'Copia IBAN'; }, 1700);
+      }
+    });
+  } else if (legacyCopy()) {
+    showCopied();
   } else {
-    fallbackCopy() ? success() : fail();
+    button.textContent = 'Copia non riuscita';
+    setTimeout(function(){ button.textContent = 'Copia IBAN'; }, 1700);
   }
+  return false;
 }
 </script>
 </body>
