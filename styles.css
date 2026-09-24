@@ -1232,3 +1232,59 @@ body.rsvp-opened{
     padding-right:max(34vw,420px) !important;
   }
 }
+
+/* RSVP — rifinitura campi nome/cognome e stato del modulo */
+.name-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  margin:0;
+  padding:0;
+  border:0;
+}
+.name-grid legend{
+  margin-bottom:14px;
+}
+.name-grid label,
+.inline-fields label{
+  display:grid;
+  gap:7px;
+  color:var(--green);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.04em;
+}
+.name-grid input{
+  width:100%;
+  padding:12px 0;
+  border:0;
+  border-bottom:1px solid rgba(24,53,47,.32);
+  border-radius:0;
+  background:transparent;
+  color:var(--green);
+  font:400 15px var(--sans);
+  outline:none;
+}
+.name-grid input:focus{
+  border-bottom-color:var(--dahlia);
+}
+.attendance-details[hidden],
+.children-details[hidden],
+.overnight-details[hidden]{
+  display:none !important;
+}
+.rsvp-dialog[open]{
+  display:block;
+}
+.rsvp-submit:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+@media (min-width:620px){
+  .name-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .name-grid legend{
+    grid-column:1/-1;
+  }
+}
