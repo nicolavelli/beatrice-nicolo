@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=19">
+  <link rel="stylesheet" href="styles.css?v=23">
 </head>
 <body>
   <header class="site-header">
@@ -164,6 +164,45 @@
         <a class="venue-link" href="https://www.google.com/maps/search/?api=1&query=Borgo+Capietaglio+Pontida" target="_blank" rel="noopener">
           Apri in Google Maps ↗
         </a>
+      </div>
+    </section>
+
+    <section class="gift-ticket-section" id="regali">
+      <div class="gift-ticket-copy reveal">
+        <p class="eyebrow">Il nostro viaggio</p>
+        <h2>Un piccolo biglietto,<br>per chi vuole accompagnarci più lontano.</h2>
+        <p class="gift-ticket-intro">Un dettaglio discreto, per chi desidera farci un pensiero.</p>
+        <button class="gift-ticket-open" type="button" aria-expanded="false" aria-controls="gift-ticket">Apri il biglietto →</button>
+      </div>
+
+      <div class="gift-ticket-wrap" id="gift-ticket" hidden>
+        <div class="gift-ticket-card">
+          <div class="gift-ticket-main">
+            <div class="gift-ticket-brand">N+B</div>
+            <div class="gift-ticket-route">
+              <span>07.12.2026</span>
+              <strong>DESTINAZIONE</strong>
+              <span>Il nostro prossimo viaggio</span>
+            </div>
+            <div class="gift-ticket-note">
+              <span>Per chi desidera farci un pensiero</span>
+            </div>
+          </div>
+          <div class="gift-ticket-stub">
+            <span class="gift-ticket-label">BOARDING DETAILS</span>
+            <dl>
+              <div>
+                <dt>Intestatario</dt>
+                <dd>Da inserire</dd>
+              </div>
+              <div>
+                <dt>IBAN</dt>
+                <dd class="gift-iban" data-iban="">Da inserire</dd>
+              </div>
+            </dl>
+            <button class="gift-copy-iban" type="button" disabled>Copia IBAN</button>
+          </div>
+        </div>
       </div>
     </section>
 
