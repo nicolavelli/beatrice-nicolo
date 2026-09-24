@@ -1983,3 +1983,65 @@ body.rsvp-opened{
   .gift-ticket-stub::before{left:-12px !important}
   .gift-ticket-stub::after{left:auto !important;right:-12px !important}
 }
+
+
+/* 28 — feedback elegante dopo copia IBAN */
+.gift-copy-iban{
+  position:relative;
+  overflow:hidden;
+  transition:
+    background .28s ease,
+    color .28s ease,
+    border-color .28s ease,
+    transform .22s ease,
+    box-shadow .28s ease;
+}
+.gift-copy-iban::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  transform:translateX(-115%);
+  background:linear-gradient(
+    105deg,
+    transparent 0 32%,
+    rgba(243,230,201,.18) 43%,
+    rgba(243,230,201,.55) 50%,
+    rgba(243,230,201,.18) 57%,
+    transparent 68% 100%
+  );
+  pointer-events:none;
+}
+.gift-copy-iban.is-copied{
+  background:#18352F !important;
+  border-color:#18352F !important;
+  color:#F3E6C9 !important;
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px rgba(24,53,47,.16);
+}
+.gift-copy-iban.is-copied::before{
+  animation:giftCopyShimmer .72s cubic-bezier(.2,.7,.2,1);
+}
+.gift-copy-iban.is-copied::after{
+  content:"✓";
+  display:inline-block;
+  margin-left:8px;
+  font-size:12px;
+  line-height:1;
+  animation:giftCheckIn .4s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes giftCopyShimmer{
+  from{transform:translateX(-115%)}
+  to{transform:translateX(115%)}
+}
+@keyframes giftCheckIn{
+  0%{opacity:0;transform:scale(.55) translateY(2px)}
+  100%{opacity:1;transform:scale(1) translateY(0)}
+}
+@media (prefers-reduced-motion:reduce){
+  .gift-copy-iban,
+  .gift-copy-iban::before,
+  .gift-copy-iban::after{
+    transition:none !important;
+    animation:none !important;
+  }
+}
