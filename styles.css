@@ -1288,3 +1288,205 @@ body.rsvp-opened{
     grid-column:1/-1;
   }
 }
+
+
+/* 20 — richiami al carosello: ottone antico, ritmo di luci, medaglioni */
+:root{
+  --brass:#A88755;
+}
+
+/* Piccolo ritmo di luci: citazione del carosello, non decorazione letterale */
+.carousel-lightline{
+  position:absolute;
+  left:7vw;
+  right:7vw;
+  bottom:20px;
+  z-index:4;
+  height:3px;
+  opacity:.72;
+  background:
+    radial-gradient(circle, var(--brass) 0 1.4px, transparent 1.6px)
+    left center / 18px 3px repeat-x;
+  pointer-events:none;
+}
+
+/* Ornamento grafico da vecchio carosello, ridotto all'essenziale */
+.carousel-ornament{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  width:94px;
+  margin:0 0 22px;
+  color:var(--brass);
+}
+.carousel-ornament::before,
+.carousel-ornament::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:currentColor;
+  opacity:.7;
+}
+.carousel-ornament span{
+  width:5px;
+  height:5px;
+  border:1px solid currentColor;
+  border-radius:50%;
+  flex:0 0 auto;
+}
+.carousel-ornament i{
+  width:7px;
+  height:7px;
+  display:block;
+  flex:0 0 auto;
+  border:1px solid currentColor;
+  transform:rotate(45deg);
+}
+
+/* Il programma prende un ritmo più "carosello d'epoca": tempo + punto luce */
+.schedule{
+  position:relative;
+}
+.schedule-item{
+  position:relative;
+}
+.schedule-item time{
+  color:var(--brass) !important;
+}
+.schedule-item::before{
+  content:"";
+  position:absolute;
+  left:71px;
+  top:34px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--brass);
+  box-shadow:0 0 0 4px rgba(168,135,85,.08);
+}
+@media (min-width:820px){
+  .schedule-item::before{
+    left:94px;
+    top:38px;
+  }
+}
+
+/* Location: logo come medaglione, richiamo ai pannelli ovali dei caroselli storici */
+.venue-medallion{
+  position:absolute;
+  right:5vw;
+  top:50%;
+  z-index:3;
+  width:min(19vw,240px);
+  aspect-ratio:1/1.18;
+  transform:translateY(-50%);
+  display:grid;
+  place-items:center;
+  padding:26px 22px;
+  border:1px solid rgba(168,135,85,.82);
+  border-radius:50% / 45%;
+}
+.venue-medallion::before,
+.venue-medallion::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--brass);
+  transform:translateX(-50%);
+}
+.venue-medallion::before{top:11px}
+.venue-medallion::after{bottom:11px}
+.venue-location-logo{
+  position:static !important;
+  width:100% !important;
+  max-width:165px !important;
+  height:auto !important;
+  transform:none !important;
+  opacity:.96 !important;
+}
+
+/* RSVP: il monogramma diventa il secondo, e ultimo, medaglione del sito */
+.rsvp-medallion{
+  position:relative;
+  width:152px;
+  aspect-ratio:1/1.12;
+  margin:0 auto 34px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(168,135,85,.68);
+  border-radius:50% / 45%;
+}
+.rsvp-medallion::before,
+.rsvp-medallion::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--brass);
+  transform:translateX(-50%);
+}
+.rsvp-medallion::before{top:9px}
+.rsvp-medallion::after{bottom:9px}
+.rsvp-copy .rsvp-medallion img{
+  width:104px !important;
+  margin:0 !important;
+}
+
+/* Piccolo accento ottone anche sul form, senza trasformarlo in tema-park */
+.rsvp-dialog-inner{
+  box-shadow:0 24px 70px rgba(16,38,31,.18);
+}
+.rsvp-form-head{
+  position:relative;
+}
+.rsvp-form-head::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:3px;
+  margin-top:22px;
+  background:
+    radial-gradient(circle, var(--brass) 0 1.35px, transparent 1.55px)
+    left center / 14px 3px repeat-x;
+}
+.rsvp-submit{
+  border-color:var(--brass) !important;
+  background:var(--dahlia) !important;
+}
+.rsvp-submit:hover{
+  background:transparent !important;
+  color:var(--dahlia) !important;
+}
+
+/* Nessun richiamo invade la pagina del faro: resta il momento più poetico */
+@media (max-width:819px){
+  .carousel-lightline{
+    left:22px;
+    right:22px;
+    bottom:16px;
+    background-size:16px 3px;
+  }
+  .venue-medallion{
+    right:18px;
+    top:25px;
+    width:104px;
+    padding:17px 14px;
+    transform:none;
+  }
+  .venue-medallion::before{top:7px}
+  .venue-medallion::after{bottom:7px}
+  .venue-location-logo{
+    max-width:72px !important;
+  }
+  .rsvp-medallion{
+    width:132px;
+  }
+  .rsvp-copy .rsvp-medallion img{
+    width:88px !important;
+  }
+}
