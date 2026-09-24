@@ -649,3 +649,44 @@ nav{display:none}
     linear-gradient(90deg,#7B2034 0%,rgba(123,32,52,.72) 10%,rgba(123,32,52,0) 27%),
     linear-gradient(180deg,#7B2034 0%,rgba(123,32,52,0) 14%,rgba(123,32,52,0) 84%,#7B2034 100%);
 }
+
+/* Faro come vero background della sezione citazione */
+.quote-section{
+  background:
+    linear-gradient(90deg, rgba(123,32,52,.00) 0%, rgba(123,32,52,.00) 58%, rgba(123,32,52,.06) 72%, rgba(123,32,52,.22) 100%),
+    url('assets/lighthouse-seamless.jpg?v=12') right bottom / min(52vw,760px) auto no-repeat,
+    #7B2034 !important;
+}
+.lighthouse-art{
+  display:none !important;
+}
+.quote-grid{
+  position:relative;
+  z-index:2;
+}
+.quote-copy{
+  position:relative;
+  z-index:2;
+  max-width:72%;
+}
+@media (max-width:819px){
+  .quote-section{
+    background:
+      linear-gradient(90deg, rgba(123,32,52,.00) 0%, rgba(123,32,52,.00) 48%, rgba(123,32,52,.14) 72%, rgba(123,32,52,.30) 100%),
+      url('assets/lighthouse-seamless.jpg?v=12') right bottom / min(72vw,320px) auto no-repeat,
+      #7B2034 !important;
+  }
+  .quote-copy{
+    max-width:100%;
+    padding-right:18vw;
+  }
+}
+@media (min-width:820px){
+  .quote-section{
+    padding-right:max(28vw,340px);
+    background:
+      linear-gradient(90deg, rgba(123,32,52,.00) 0%, rgba(123,32,52,.00) 58%, rgba(123,32,52,.06) 74%, rgba(123,32,52,.20) 100%),
+      url('assets/lighthouse-seamless.jpg?v=12') right bottom / min(44vw,760px) auto no-repeat,
+      #7B2034 !important;
+  }
+}
