@@ -175,8 +175,17 @@
 
       <form class="rsvp-form" id="rsvp-form">
         <div class="form-field">
-          <label for="guest-name">Nome e cognome</label>
-          <input id="guest-name" name="guest_name" type="text" autocomplete="name" placeholder="Nome dell'invitato" required>
+          <fieldset class="name-grid">
+            <legend>Nome e cognome</legend>
+            <label>
+              <span>Nome dell'invitato</span>
+              <input id="guest-name" name="guest_name" type="text" autocomplete="given-name" required>
+            </label>
+            <label>
+              <span>Cognome dell'invitato</span>
+              <input id="guest-surname" name="guest_surname" type="text" autocomplete="family-name" required>
+            </label>
+          </fieldset>
         </div>
 
         <fieldset class="form-field">
@@ -191,10 +200,12 @@
             <label class="choice"><input type="radio" name="children" value="no"> <span>No</span></label>
             <label class="choice"><input type="radio" name="children" value="si"> <span>Sì</span></label>
             <div class="inline-fields children-details" data-children-details hidden>
-              <label>Numero
+              <label>
+                <span>Numero</span>
                 <input name="children_number" type="number" min="1" inputmode="numeric">
               </label>
-              <label>Età
+              <label>
+                <span>Età</span>
                 <input name="children_ages" type="text" placeholder="es. 4, 7">
               </label>
             </div>
@@ -209,12 +220,12 @@
             <label class="choice choice-with-extra">
               <input type="radio" name="food" value="allergie">
               <span>Allergie/intolleranze</span>
-              <input class="choice-extra" name="food_allergies" type="text" aria-label="Specifica allergie o intolleranze">
+              <input class="choice-extra" name="food_allergies" type="text" aria-label="Specifica allergie o intolleranze" placeholder="Specifica">
             </label>
             <label class="choice choice-with-extra">
               <input type="radio" name="food" value="altro">
               <span>Altro</span>
-              <input class="choice-extra" name="food_other" type="text" aria-label="Specifica altra esigenza alimentare">
+              <input class="choice-extra" name="food_other" type="text" aria-label="Specifica altra esigenza alimentare" placeholder="Specifica">
             </label>
           </fieldset>
 
@@ -223,10 +234,12 @@
             <label class="choice"><input type="radio" name="overnight" value="no"> <span>Non necessito di pernottamento</span></label>
             <label class="choice"><input type="radio" name="overnight" value="si"> <span>Sì, necessito di pernottamento</span></label>
             <div class="inline-fields overnight-details" data-overnight-details hidden>
-              <label>Numero di camere
+              <label>
+                <span>Numero di camere</span>
                 <input name="rooms" type="number" min="1" inputmode="numeric">
               </label>
-              <label>Numero di persone
+              <label>
+                <span>Numero di persone</span>
                 <input name="overnight_people" type="number" min="1" inputmode="numeric">
               </label>
             </div>
