@@ -158,11 +158,93 @@
         <img src="assets/monogramma-nb.svg?v=8" alt="Monogramma N e B">
         <p class="eyebrow">Conferma</p>
         <h2>Ci sarete?</h2>
-        <p>La conferma RSVP sarà attivata qui quando apriremo ufficialmente le adesioni.</p>
-        <button disabled>RSVP · presto disponibile</button>
+        <p>Fateci sapere se sarete con noi.</p>
+        <button class="rsvp-open" type="button" aria-haspopup="dialog" aria-controls="rsvp-dialog">Conferma presenza</button>
       </div>
     </section>
   </main>
+
+  <dialog class="rsvp-dialog" id="rsvp-dialog" aria-labelledby="rsvp-dialog-title">
+    <div class="rsvp-dialog-inner">
+      <button class="rsvp-close" type="button" aria-label="Chiudi il modulo">×</button>
+      <div class="rsvp-form-head">
+        <p class="eyebrow">RSVP</p>
+        <h2 id="rsvp-dialog-title">Conferma presenza</h2>
+        <p>Compilate il modulo con le informazioni necessarie per organizzare al meglio la giornata.</p>
+      </div>
+
+      <form class="rsvp-form" id="rsvp-form">
+        <div class="form-field">
+          <label for="guest-name">Nome e cognome</label>
+          <input id="guest-name" name="guest_name" type="text" autocomplete="name" placeholder="Nome dell'invitato" required>
+        </div>
+
+        <fieldset class="form-field">
+          <legend>Sarai con noi?</legend>
+          <label class="choice"><input type="radio" name="attendance" value="si" required> <span>Sì, sarò presente</span></label>
+          <label class="choice"><input type="radio" name="attendance" value="no"> <span>Mi dispiace, non potrò partecipare</span></label>
+        </fieldset>
+
+        <div class="attendance-details" data-attendance-details hidden>
+          <fieldset class="form-field">
+            <legend>Parteciperanno bambini?</legend>
+            <label class="choice"><input type="radio" name="children" value="no"> <span>No</span></label>
+            <label class="choice"><input type="radio" name="children" value="si"> <span>Sì</span></label>
+            <div class="inline-fields children-details" data-children-details hidden>
+              <label>Numero
+                <input name="children_number" type="number" min="1" inputmode="numeric">
+              </label>
+              <label>Età
+                <input name="children_ages" type="text" placeholder="es. 4, 7">
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-field">
+            <legend>Hai esigenze alimentari o allergie/intolleranze da segnalarci?</legend>
+            <label class="choice"><input type="radio" name="food" value="nessuna"> <span>Nessuna</span></label>
+            <label class="choice"><input type="radio" name="food" value="vegetariano"> <span>Vegetariano</span></label>
+            <label class="choice"><input type="radio" name="food" value="vegano"> <span>Vegano</span></label>
+            <label class="choice"><input type="radio" name="food" value="senza-glutine"> <span>Senza glutine</span></label>
+            <label class="choice choice-with-extra">
+              <input type="radio" name="food" value="allergie">
+              <span>Allergie/intolleranze</span>
+              <input class="choice-extra" name="food_allergies" type="text" aria-label="Specifica allergie o intolleranze">
+            </label>
+            <label class="choice choice-with-extra">
+              <input type="radio" name="food" value="altro">
+              <span>Altro</span>
+              <input class="choice-extra" name="food_other" type="text" aria-label="Specifica altra esigenza alimentare">
+            </label>
+          </fieldset>
+
+          <fieldset class="form-field">
+            <legend>Pernottamento</legend>
+            <label class="choice"><input type="radio" name="overnight" value="no"> <span>Non necessito di pernottamento</span></label>
+            <label class="choice"><input type="radio" name="overnight" value="si"> <span>Sì, necessito di pernottamento</span></label>
+            <div class="inline-fields overnight-details" data-overnight-details hidden>
+              <label>Numero di camere
+                <input name="rooms" type="number" min="1" inputmode="numeric">
+              </label>
+              <label>Numero di persone
+                <input name="overnight_people" type="number" min="1" inputmode="numeric">
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="special-needs">Ci sono altre esigenze particolari che dovremmo conoscere?</label>
+            <textarea id="special-needs" name="special_needs" rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="rsvp-form-actions">
+          <button class="rsvp-submit" type="submit">Invia conferma</button>
+          <p class="rsvp-form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </dialog>
 
   <footer class="site-footer">
     <p>Beatrice & Nicolò · 07.12.2026</p>
