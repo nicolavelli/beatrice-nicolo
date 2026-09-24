@@ -146,8 +146,14 @@ if (giftCopyIban && giftIban) {
     giftCopyIban.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(iban);
+        giftCopyIban.classList.remove('is-copied');
+        void giftCopyIban.offsetWidth;
+        giftCopyIban.classList.add('is-copied');
         giftCopyIban.textContent = 'IBAN copiato';
-        setTimeout(() => giftCopyIban.textContent = 'Copia IBAN', 1600);
+        setTimeout(() => {
+          giftCopyIban.classList.remove('is-copied');
+          giftCopyIban.textContent = 'Copia IBAN';
+        }, 1700);
       } catch {
         giftCopyIban.textContent = 'Seleziona e copia';
       }
