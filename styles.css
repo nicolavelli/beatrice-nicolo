@@ -1490,3 +1490,173 @@ body.rsvp-opened{
     width:88px !important;
   }
 }
+
+
+/* 21 — carosello più presente, sempre editoriale. La sezione faro resta intatta. */
+
+/* Home: le "luci" diventano un vero segno grafico */
+.carousel-lightline{
+  height:8px !important;
+  opacity:.95 !important;
+  background:
+    linear-gradient(90deg,transparent 0%,rgba(168,135,85,.75) 9%,rgba(168,135,85,.75) 91%,transparent 100%) center 1px / 100% 1px no-repeat,
+    radial-gradient(circle,var(--brass) 0 2.25px,transparent 2.5px) left 5px / 22px 6px repeat-x !important;
+}
+.carousel-lightline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:11px;
+  width:min(46vw,520px);
+  height:min(16vw,150px);
+  border:1px solid rgba(168,135,85,.38);
+  border-bottom:0;
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;
+  transform:translateX(-50%);
+}
+
+/* Programma: un piccolo emblema di carosello, lineare e non illustrativo */
+.carousel-emblem{
+  width:112px;
+  margin:0 0 20px -5px;
+}
+.carousel-emblem svg{
+  display:block;
+  width:100%;
+  height:auto;
+  overflow:visible;
+}
+.carousel-emblem .ce-line,
+.carousel-emblem .ce-horse{
+  fill:none;
+  stroke:var(--brass);
+  stroke-width:1.35;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.carousel-emblem .ce-horse{
+  stroke-width:1.15;
+  opacity:.92;
+}
+.carousel-emblem .ce-dot{
+  fill:var(--brass);
+}
+.day-head .eyebrow{
+  margin-bottom:13px;
+}
+.schedule{
+  border-top-color:rgba(168,135,85,.7) !important;
+}
+.schedule-item{
+  border-bottom-color:rgba(168,135,85,.28) !important;
+}
+.schedule-item time{
+  font-size:12px !important;
+  letter-spacing:.16em !important;
+}
+.schedule-item::before{
+  width:8px !important;
+  height:8px !important;
+  background:var(--brass) !important;
+  box-shadow:0 0 0 5px rgba(168,135,85,.10) !important;
+}
+
+/* Pagina colori: cinque piccoli archi, eco del bordo del baldacchino */
+.dress-palette{
+  position:relative;
+  overflow:hidden;
+}
+.carousel-canopy-mark{
+  position:absolute;
+  top:30px;
+  right:max(5vw,24px);
+  display:flex;
+  gap:7px;
+  height:42px;
+  opacity:.78;
+  pointer-events:none;
+}
+.carousel-canopy-mark span{
+  display:block;
+  width:27px;
+  height:21px;
+  border:1px solid var(--brass);
+  border-top:0;
+  border-radius:0 0 50% 50%;
+}
+.carousel-canopy-mark::before{
+  content:"";
+  position:absolute;
+  left:-8px;
+  right:-8px;
+  top:-5px;
+  height:1px;
+  background:var(--brass);
+}
+
+/* Location: medaglione più deciso, con doppio filetto da carosello storico */
+.venue-medallion{
+  width:min(21vw,260px) !important;
+  border-color:rgba(196,164,109,.95) !important;
+  box-shadow:
+    inset 0 0 0 6px rgba(123,32,52,1),
+    inset 0 0 0 7px rgba(196,164,109,.48);
+}
+.venue-medallion::before,
+.venue-medallion::after{
+  width:7px !important;
+  height:7px !important;
+  background:#C4A46D !important;
+}
+
+/* RSVP: medaglione e micro-luci più leggibili */
+.rsvp-medallion{
+  width:166px !important;
+  border-color:rgba(168,135,85,.92) !important;
+  box-shadow:
+    inset 0 0 0 5px var(--vanilla),
+    inset 0 0 0 6px rgba(168,135,85,.34);
+}
+.rsvp-medallion::before,
+.rsvp-medallion::after{
+  width:7px !important;
+  height:7px !important;
+}
+.rsvp-form-head::after{
+  width:104px !important;
+  height:5px !important;
+  background:
+    radial-gradient(circle,var(--brass) 0 2px,transparent 2.25px)
+    left center / 17px 5px repeat-x !important;
+}
+
+@media (max-width:819px){
+  .carousel-lightline{
+    height:7px !important;
+  }
+  .carousel-lightline::before{
+    width:62vw;
+    height:21vw;
+    bottom:10px;
+  }
+  .carousel-emblem{
+    width:96px;
+    margin-bottom:18px;
+  }
+  .carousel-canopy-mark{
+    top:22px;
+    right:18px;
+    gap:5px;
+    height:34px;
+  }
+  .carousel-canopy-mark span{
+    width:21px;
+    height:17px;
+  }
+  .venue-medallion{
+    width:118px !important;
+  }
+  .rsvp-medallion{
+    width:145px !important;
+  }
+}
