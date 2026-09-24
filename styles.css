@@ -1572,3 +1572,45 @@ body.rsvp-opened{
     padding-left:38px;
   }
 }
+
+
+/* 25 — identità compagnia aerea N+B */
+.gift-ticket-airline{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:max-content;
+}
+.gift-ticket-airline img{
+  width:48px;
+  height:auto;
+  display:block;
+}
+.gift-ticket-airline span{
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:500;
+  letter-spacing:-.025em;
+  color:var(--green);
+}
+.gift-ticket-airline::after{
+  content:"BOARDING PASS";
+  margin-left:8px;
+  font:600 8px var(--sans);
+  letter-spacing:.2em;
+  color:var(--muted);
+}
+.gift-ticket-brand{
+  display:none !important;
+}
+@media (max-width:700px){
+  .gift-ticket-airline img{
+    width:42px;
+  }
+  .gift-ticket-airline span{
+    font-size:21px;
+  }
+  .gift-ticket-airline::after{
+    display:none;
+  }
+}
