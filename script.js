@@ -113,15 +113,10 @@ if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
       other.required = target.value === 'altro';
     }
   });
-
   rsvpForm.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!rsvpForm.reportValidity()) return;
 
-    const formData = new FormData(rsvpForm);
-    const payload = Object.fromEntries(formData.entries());
-    localStorage.setItem('beatrice-nicolo-rsvp-draft', JSON.stringify(payload));
-
-    rsvpStatus.textContent = 'Dati compilati correttamente. Il modulo è pronto per essere collegato all’invio definitivo.';
+    rsvpStatus.textContent = 'Dati compilati correttamente.';
   });
 }
