@@ -1465,3 +1465,110 @@ body.rsvp-opened{
   .gift-ticket-stub::after{left:auto;right:-11px}
   .gift-ticket-main{min-height:250px}
 }
+
+
+/* 24 — boarding pass più credibile e più chiara come sezione regalo */
+.gift-ticket-card{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.32),rgba(255,255,255,0) 35%),
+    var(--vanilla);
+}
+.gift-ticket-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 28px,
+      rgba(24,53,47,.025) 28px 29px
+    );
+}
+.gift-ticket-main{
+  padding-top:28px;
+}
+.gift-ticket-brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.gift-ticket-brand::after{
+  content:"BOARDING PASS";
+  font:600 8px var(--sans);
+  letter-spacing:.2em;
+  color:var(--muted);
+}
+.gift-ticket-route{
+  grid-template-columns:auto 1fr;
+  column-gap:20px;
+  align-items:end;
+}
+.gift-ticket-route strong{
+  grid-column:1/-1;
+}
+.gift-ticket-route span:first-child{
+  display:inline-block;
+  padding:6px 9px;
+  border:1px solid rgba(24,53,47,.18);
+  border-radius:999px;
+}
+.gift-ticket-route span:last-child{
+  position:relative;
+  padding-left:42px;
+}
+.gift-ticket-route span:last-child::before{
+  content:"✈";
+  position:absolute;
+  left:0;
+  top:.02em;
+  font:400 28px/1 var(--sans);
+  color:var(--dahlia);
+  transform:rotate(-12deg);
+}
+.gift-ticket-note{
+  font-weight:500;
+  color:var(--green);
+}
+.gift-ticket-stub{
+  background:rgba(255,255,255,.18);
+}
+.gift-ticket-label{
+  display:inline-block;
+  margin-bottom:8px;
+}
+.gift-ticket-label::before{
+  content:"REGALO · ";
+  color:var(--dahlia);
+}
+.gift-ticket-stub dl{
+  border-top:1px solid rgba(24,53,47,.12);
+  padding-top:18px;
+}
+.gift-ticket-stub::after{
+  box-shadow:0 -56px 0 var(--green);
+}
+.gift-ticket-stub::before{
+  box-shadow:0 56px 0 var(--green);
+}
+.gift-ticket-section .eyebrow{
+  color:#E6CFC3;
+}
+.gift-ticket-copy h2{
+  max-width:980px;
+}
+.gift-ticket-intro{
+  font-size:15px;
+}
+@media (max-width:700px){
+  .gift-ticket-route{
+    grid-template-columns:1fr;
+    align-items:start;
+  }
+  .gift-ticket-route span:last-child{
+    padding-left:38px;
+  }
+}
