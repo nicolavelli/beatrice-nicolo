@@ -226,7 +226,7 @@
                 <dd class="gift-iban" data-iban="IT60X0542811101000000123456">IT60 X054 2811 1010 0000 0123 456</dd>
               </div>
             </dl>
-            <button class="gift-copy-iban" type="button">Copia IBAN</button>
+            <button class="gift-copy-iban" type="button" onclick="copyGiftIban(this)">Copia IBAN</button>
             <div class="gift-barcode" aria-hidden="true"></div>
           </aside>
         </article>
@@ -344,5 +344,53 @@
   </footer>
 
   <script src="script.js?v=29"></script>
+<script>
+  function copyGiftIban(button) {
+    var iban = 'IT60X0542811101000000123456';
+
+    function success() {
+      button.classList.remove('is-copied');
+      void button.offsetWidth;
+      button.classList.add('is-copied');
+      button.textContent = 'IBAN copiato';
+      window.setTimeout(function () {
+        button.classList.remove('is-copied');
+        button.textContent = 'Copia IBAN';
+      }, 1700);
+    }
+
+    function fallback() {
+      var input = document.createElement('textarea');
+      input.value = iban;
+      input.style.position = 'fixed';
+      input.style.top = '0';
+      input.style.left = '-9999px';
+      input.style.opacity = '0';
+      document.body.appendChild(input);
+      input.focus();
+      input.select();
+      input.setSelectionRange(0, input.value.length);
+      var copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch (e) {}
+      document.body.removeChild(input);
+      if (copied) {
+        success();
+      } else {
+        button.textContent = 'Tieni premuto sull\'IBAN';
+        window.setTimeout(function () {
+          button.textContent = 'Copia IBAN';
+        }, 1700);
+      }
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(iban).then(success).catch(fallback);
+    } else {
+      fallback();
+    }
+  }
+</script>
 </body>
 </html>
