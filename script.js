@@ -69,18 +69,48 @@ if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
     if (target.name === 'attendance') {
       const present = target.value === 'si';
       attendanceDetails.hidden = !present;
-      if (!present) {
+
+      const childrenRadios = rsvpForm.querySelectorAll('input[name="children"]');
+      const foodRadios = rsvpForm.querySelectorAll('input[name="food"]');
+      const overnightRadios = rsvpForm.querySelectorAll('input[name="overnight"]');
+
+      [...childrenRadios, ...foodRadios, ...overnightRadios].forEach((input) => {
+        input.required = false;
+      });
+
+      if (present) {
+        childrenRadios[0].required = true;
+        foodRadios[0].required = true;
+        overnightRadios[0].required = true;
+      } else {
         childrenDetails.hidden = true;
         overnightDetails.hidden = true;
       }
     }
 
     if (target.name === 'children') {
-      childrenDetails.hidden = target.value !== 'si';
+      const hasChildren = target.value === 'si';
+      childrenDetails.hidden = !hasChildren;
+      const number = rsvpForm.querySelector('input[name="children_number"]');
+      const ages = rsvpForm.querySelector('input[name="children_ages"]');
+      number.required = hasChildren;
+      ages.required = hasChildren;
     }
 
     if (target.name === 'overnight') {
-      overnightDetails.hidden = target.value !== 'si';
+      const needsRoom = target.value === 'si';
+      overnightDetails.hidden = !needsRoom;
+      const rooms = rsvpForm.querySelector('input[name="rooms"]');
+      const people = rsvpForm.querySelector('input[name="overnight_people"]');
+      rooms.required = needsRoom;
+      people.required = needsRoom;
+    }
+
+    if (target.name === 'food') {
+      const allergies = rsvpForm.querySelector('input[name="food_allergies"]');
+      const other = rsvpForm.querySelector('input[name="food_other"]');
+      allergies.required = target.value === 'allergie';
+      other.required = target.value === 'altro';
     }
   });
 
