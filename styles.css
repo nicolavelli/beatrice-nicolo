@@ -1289,374 +1289,80 @@ body.rsvp-opened{
   }
 }
 
-
-/* 20 — richiami al carosello: ottone antico, ritmo di luci, medaglioni */
-:root{
-  --brass:#A88755;
-}
-
-/* Piccolo ritmo di luci: citazione del carosello, non decorazione letterale */
-.carousel-lightline{
+/* 22 — carosello fantasma: grandi figure tono su tono, nessuna decorazione letterale */
+.carousel-ghost{
   position:absolute;
-  left:7vw;
-  right:7vw;
-  bottom:20px;
-  z-index:4;
-  height:3px;
-  opacity:.72;
-  background:
-    radial-gradient(circle, var(--brass) 0 1.4px, transparent 1.6px)
-    left center / 18px 3px repeat-x;
-  pointer-events:none;
-}
-
-/* Ornamento grafico da vecchio carosello, ridotto all'essenziale */
-.carousel-ornament{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  width:94px;
-  margin:0 0 22px;
-  color:var(--brass);
-}
-.carousel-ornament::before,
-.carousel-ornament::after{
-  content:"";
-  flex:1;
-  height:1px;
-  background:currentColor;
-  opacity:.7;
-}
-.carousel-ornament span{
-  width:5px;
-  height:5px;
-  border:1px solid currentColor;
-  border-radius:50%;
-  flex:0 0 auto;
-}
-.carousel-ornament i{
-  width:7px;
-  height:7px;
+  z-index:0;
   display:block;
-  flex:0 0 auto;
-  border:1px solid currentColor;
-  transform:rotate(45deg);
-}
-
-/* Il programma prende un ritmo più "carosello d'epoca": tempo + punto luce */
-.schedule{
-  position:relative;
-}
-.schedule-item{
-  position:relative;
-}
-.schedule-item time{
-  color:var(--brass) !important;
-}
-.schedule-item::before{
-  content:"";
-  position:absolute;
-  left:71px;
-  top:34px;
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--brass);
-  box-shadow:0 0 0 4px rgba(168,135,85,.08);
-}
-@media (min-width:820px){
-  .schedule-item::before{
-    left:94px;
-    top:38px;
-  }
-}
-
-/* Location: logo come medaglione, richiamo ai pannelli ovali dei caroselli storici */
-.venue-medallion{
-  position:absolute;
-  right:5vw;
-  top:50%;
-  z-index:3;
-  width:min(19vw,240px);
-  aspect-ratio:1/1.18;
-  transform:translateY(-50%);
-  display:grid;
-  place-items:center;
-  padding:26px 22px;
-  border:1px solid rgba(168,135,85,.82);
-  border-radius:50% / 45%;
-}
-.venue-medallion::before,
-.venue-medallion::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:var(--brass);
-  transform:translateX(-50%);
-}
-.venue-medallion::before{top:11px}
-.venue-medallion::after{bottom:11px}
-.venue-location-logo{
-  position:static !important;
-  width:100% !important;
-  max-width:165px !important;
-  height:auto !important;
-  transform:none !important;
-  opacity:.96 !important;
-}
-
-/* RSVP: il monogramma diventa il secondo, e ultimo, medaglione del sito */
-.rsvp-medallion{
-  position:relative;
-  width:152px;
-  aspect-ratio:1/1.12;
-  margin:0 auto 34px;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(168,135,85,.68);
-  border-radius:50% / 45%;
-}
-.rsvp-medallion::before,
-.rsvp-medallion::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:var(--brass);
-  transform:translateX(-50%);
-}
-.rsvp-medallion::before{top:9px}
-.rsvp-medallion::after{bottom:9px}
-.rsvp-copy .rsvp-medallion img{
-  width:104px !important;
-  margin:0 !important;
-}
-
-/* Piccolo accento ottone anche sul form, senza trasformarlo in tema-park */
-.rsvp-dialog-inner{
-  box-shadow:0 24px 70px rgba(16,38,31,.18);
-}
-.rsvp-form-head{
-  position:relative;
-}
-.rsvp-form-head::after{
-  content:"";
-  display:block;
-  width:72px;
-  height:3px;
-  margin-top:22px;
-  background:
-    radial-gradient(circle, var(--brass) 0 1.35px, transparent 1.55px)
-    left center / 14px 3px repeat-x;
-}
-.rsvp-submit{
-  border-color:var(--brass) !important;
-  background:var(--dahlia) !important;
-}
-.rsvp-submit:hover{
-  background:transparent !important;
-  color:var(--dahlia) !important;
-}
-
-/* Nessun richiamo invade la pagina del faro: resta il momento più poetico */
-@media (max-width:819px){
-  .carousel-lightline{
-    left:22px;
-    right:22px;
-    bottom:16px;
-    background-size:16px 3px;
-  }
-  .venue-medallion{
-    right:18px;
-    top:25px;
-    width:104px;
-    padding:17px 14px;
-    transform:none;
-  }
-  .venue-medallion::before{top:7px}
-  .venue-medallion::after{bottom:7px}
-  .venue-location-logo{
-    max-width:72px !important;
-  }
-  .rsvp-medallion{
-    width:132px;
-  }
-  .rsvp-copy .rsvp-medallion img{
-    width:88px !important;
-  }
-}
-
-
-/* 21 — carosello più presente, sempre editoriale. La sezione faro resta intatta. */
-
-/* Home: le "luci" diventano un vero segno grafico */
-.carousel-lightline{
-  height:8px !important;
-  opacity:.95 !important;
-  background:
-    linear-gradient(90deg,transparent 0%,rgba(168,135,85,.75) 9%,rgba(168,135,85,.75) 91%,transparent 100%) center 1px / 100% 1px no-repeat,
-    radial-gradient(circle,var(--brass) 0 2.25px,transparent 2.5px) left 5px / 22px 6px repeat-x !important;
-}
-.carousel-lightline::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:11px;
-  width:min(46vw,520px);
-  height:min(16vw,150px);
-  border:1px solid rgba(168,135,85,.38);
-  border-bottom:0;
-  border-radius:50% 50% 0 0 / 100% 100% 0 0;
-  transform:translateX(-50%);
-}
-
-/* Programma: un piccolo emblema di carosello, lineare e non illustrativo */
-.carousel-emblem{
-  width:112px;
-  margin:0 0 20px -5px;
-}
-.carousel-emblem svg{
-  display:block;
-  width:100%;
   height:auto;
-  overflow:visible;
+  pointer-events:none;
+  user-select:none;
+  opacity:.042;
+  filter:saturate(.85);
 }
-.carousel-emblem .ce-line,
-.carousel-emblem .ce-horse{
-  fill:none;
-  stroke:var(--brass);
-  stroke-width:1.35;
-  stroke-linecap:round;
-  stroke-linejoin:round;
+.day-head,
+.schedule,
+.dress-intro,
+.colour-cards,
+.rsvp-copy{
+  position:relative;
+  z-index:2;
 }
-.carousel-emblem .ce-horse{
-  stroke-width:1.15;
-  opacity:.92;
+.day{
+  isolation:isolate;
 }
-.carousel-emblem .ce-dot{
-  fill:var(--brass);
+.carousel-ghost-horse{
+  width:min(43vw,610px);
+  right:-5vw;
+  bottom:-10%;
+  transform:rotate(-4deg);
 }
-.day-head .eyebrow{
-  margin-bottom:13px;
-}
-.schedule{
-  border-top-color:rgba(168,135,85,.7) !important;
-}
-.schedule-item{
-  border-bottom-color:rgba(168,135,85,.28) !important;
-}
-.schedule-item time{
-  font-size:12px !important;
-  letter-spacing:.16em !important;
-}
-.schedule-item::before{
-  width:8px !important;
-  height:8px !important;
-  background:var(--brass) !important;
-  box-shadow:0 0 0 5px rgba(168,135,85,.10) !important;
-}
-
-/* Pagina colori: cinque piccoli archi, eco del bordo del baldacchino */
 .dress-palette{
   position:relative;
   overflow:hidden;
+  isolation:isolate;
 }
-.carousel-canopy-mark{
-  position:absolute;
-  top:30px;
-  right:max(5vw,24px);
-  display:flex;
-  gap:7px;
-  height:42px;
-  opacity:.78;
-  pointer-events:none;
+.carousel-ghost-swan{
+  width:min(39vw,540px);
+  left:-7vw;
+  bottom:-9%;
+  transform:rotate(4deg);
+  opacity:.036;
 }
-.carousel-canopy-mark span{
-  display:block;
-  width:27px;
-  height:21px;
-  border:1px solid var(--brass);
-  border-top:0;
-  border-radius:0 0 50% 50%;
+.rsvp{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
 }
-.carousel-canopy-mark::before{
-  content:"";
-  position:absolute;
-  left:-8px;
-  right:-8px;
-  top:-5px;
-  height:1px;
-  background:var(--brass);
+.carousel-ghost-carriage{
+  width:min(48vw,700px);
+  right:-8vw;
+  bottom:-12%;
+  transform:rotate(-2deg);
+  opacity:.034;
 }
 
-/* Location: medaglione più deciso, con doppio filetto da carosello storico */
-.venue-medallion{
-  width:min(21vw,260px) !important;
-  border-color:rgba(196,164,109,.95) !important;
-  box-shadow:
-    inset 0 0 0 6px rgba(123,32,52,1),
-    inset 0 0 0 7px rgba(196,164,109,.48);
-}
-.venue-medallion::before,
-.venue-medallion::after{
-  width:7px !important;
-  height:7px !important;
-  background:#C4A46D !important;
-}
-
-/* RSVP: medaglione e micro-luci più leggibili */
-.rsvp-medallion{
-  width:166px !important;
-  border-color:rgba(168,135,85,.92) !important;
-  box-shadow:
-    inset 0 0 0 5px var(--vanilla),
-    inset 0 0 0 6px rgba(168,135,85,.34);
-}
-.rsvp-medallion::before,
-.rsvp-medallion::after{
-  width:7px !important;
-  height:7px !important;
-}
-.rsvp-form-head::after{
-  width:104px !important;
-  height:5px !important;
-  background:
-    radial-gradient(circle,var(--brass) 0 2px,transparent 2.25px)
-    left center / 17px 5px repeat-x !important;
-}
-
+/* I soggetti sono volutamente tagliati dal bordo: più manifesto grafico, meno illustrazione. */
 @media (max-width:819px){
-  .carousel-lightline{
-    height:7px !important;
+  .carousel-ghost{
+    opacity:.035;
   }
-  .carousel-lightline::before{
-    width:62vw;
-    height:21vw;
-    bottom:10px;
+  .carousel-ghost-horse{
+    width:78vw;
+    right:-30vw;
+    bottom:-3%;
+    transform:rotate(-5deg);
   }
-  .carousel-emblem{
-    width:96px;
-    margin-bottom:18px;
+  .carousel-ghost-swan{
+    width:72vw;
+    left:-31vw;
+    bottom:-2%;
+    transform:rotate(5deg);
   }
-  .carousel-canopy-mark{
-    top:22px;
-    right:18px;
-    gap:5px;
-    height:34px;
-  }
-  .carousel-canopy-mark span{
-    width:21px;
-    height:17px;
-  }
-  .venue-medallion{
-    width:118px !important;
-  }
-  .rsvp-medallion{
-    width:145px !important;
+  .carousel-ghost-carriage{
+    width:86vw;
+    right:-34vw;
+    bottom:-3%;
+    transform:rotate(-3deg);
   }
 }
