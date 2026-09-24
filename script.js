@@ -120,3 +120,37 @@ if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
     rsvpStatus.textContent = 'Dati compilati correttamente.';
   });
 }
+
+
+const giftTicketOpen = document.querySelector('.gift-ticket-open');
+const giftTicket = document.querySelector('#gift-ticket');
+const giftCopyIban = document.querySelector('.gift-copy-iban');
+const giftIban = document.querySelector('.gift-iban');
+
+if (giftTicketOpen && giftTicket) {
+  giftTicketOpen.addEventListener('click', () => {
+    const opening = giftTicket.hidden;
+    giftTicket.hidden = !opening;
+    giftTicketOpen.setAttribute('aria-expanded', String(opening));
+    giftTicketOpen.textContent = opening ? 'Chiudi il biglietto ↑' : 'Apri il biglietto →';
+    if (opening) {
+      setTimeout(() => giftTicket.scrollIntoView({ behavior:'smooth', block:'nearest' }), 40);
+    }
+  });
+}
+
+if (giftCopyIban && giftIban) {
+  const iban = giftIban.dataset.iban?.trim();
+  if (iban) {
+    giftCopyIban.disabled = false;
+    giftCopyIban.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(iban);
+        giftCopyIban.textContent = 'IBAN copiato';
+        setTimeout(() => giftCopyIban.textContent = 'Copia IBAN', 1600);
+      } catch {
+        giftCopyIban.textContent = 'Seleziona e copia';
+      }
+    });
+  }
+}
