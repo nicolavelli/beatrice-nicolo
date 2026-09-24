@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=26">
+  <link rel="stylesheet" href="styles.css?v=27">
 </head>
 <body>
   <header class="site-header">
@@ -176,20 +176,46 @@
       </div>
 
       <div class="gift-ticket-wrap" id="gift-ticket" hidden>
-        <div class="gift-ticket-card">
+        <article class="gift-ticket-card" aria-label="Boarding pass regalo">
           <div class="gift-ticket-main">
-            <div class="gift-ticket-airline"><img src="assets/monogramma-nb-bordeaux.webp?v=26" alt="Monogramma N e B"><span class="gift-airline-name">Airlines</span><span class="gift-airline-pass">BOARDING PASS</span></div>
-            <div class="gift-ticket-route">
-              <span>07.12.2026</span>
-              <strong>DESTINAZIONE</strong>
-              <span>Viaggio di nozze</span>
+            <div class="gift-ticket-topline">
+              <div class="gift-airline-lockup">
+                <span class="gift-airline-logo-frame">
+                  <img src="assets/monogramma-nb.svg?v=27" alt="Monogramma NB">
+                </span>
+                <span class="gift-airline-wordmark">Airlines</span>
+              </div>
+              <span class="gift-boarding-title">BOARDING PASS</span>
             </div>
-            <div class="gift-ticket-note">
-              <span>Contributo regalo · bonifico bancario</span>
+
+            <div class="gift-flight-route">
+              <div>
+                <span class="gift-micro">FROM</span>
+                <strong>07 DEC</strong>
+                <small>2026</small>
+              </div>
+              <div class="gift-flight-line" aria-hidden="true"><span>✈</span></div>
+              <div>
+                <span class="gift-micro">TO</span>
+                <strong>HONEYMOON</strong>
+                <small>Our next journey</small>
+              </div>
             </div>
+
+            <div class="gift-flight-meta">
+              <div><span class="gift-micro">FLIGHT</span><strong>NB 0712</strong></div>
+              <div><span class="gift-micro">CLASS</span><strong>LOVE</strong></div>
+              <div><span class="gift-micro">STATUS</span><strong>JUST MARRIED</strong></div>
+            </div>
+
+            <div class="gift-ticket-note">Contributo regalo · bonifico bancario</div>
           </div>
-          <div class="gift-ticket-stub">
-            <span class="gift-ticket-label">PAYMENT DETAILS</span>
+
+          <aside class="gift-ticket-stub">
+            <div class="gift-stub-head">
+              <span class="gift-ticket-label">PAYMENT DETAILS</span>
+              <span class="gift-stub-code">NB0712</span>
+            </div>
             <dl>
               <div>
                 <dt>Intestatario</dt>
@@ -201,8 +227,9 @@
               </div>
             </dl>
             <button class="gift-copy-iban" type="button" disabled>Copia IBAN</button>
-          </div>
-        </div>
+            <div class="gift-barcode" aria-hidden="true"></div>
+          </aside>
+        </article>
       </div>
     </section>
 
