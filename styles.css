@@ -1614,3 +1614,62 @@ body.rsvp-opened{
     display:none;
   }
 }
+
+
+/* 26 — fix visibilità marchio NB Airlines sul boarding pass */
+.gift-ticket-airline{
+  display:flex !important;
+  align-items:center !important;
+  gap:14px !important;
+  width:auto !important;
+  min-height:64px !important;
+  margin-bottom:8px !important;
+  position:relative !important;
+  z-index:4 !important;
+}
+.gift-ticket-airline img{
+  display:block !important;
+  width:70px !important;
+  height:54px !important;
+  object-fit:contain !important;
+  flex:0 0 auto !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  filter:none !important;
+}
+.gift-airline-name{
+  display:inline-block !important;
+  font-family:var(--serif) !important;
+  font-size:30px !important;
+  font-weight:500 !important;
+  line-height:1 !important;
+  letter-spacing:-.03em !important;
+  color:var(--green) !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+.gift-airline-pass{
+  display:inline-block !important;
+  margin-left:6px !important;
+  font:600 8px var(--sans) !important;
+  letter-spacing:.22em !important;
+  color:var(--muted) !important;
+}
+.gift-ticket-airline::after{
+  content:none !important;
+}
+@media (max-width:700px){
+  .gift-ticket-airline{
+    gap:10px !important;
+  }
+  .gift-ticket-airline img{
+    width:58px !important;
+    height:46px !important;
+  }
+  .gift-airline-name{
+    font-size:25px !important;
+  }
+  .gift-airline-pass{
+    display:none !important;
+  }
+}
