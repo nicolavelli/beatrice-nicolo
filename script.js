@@ -45,6 +45,7 @@ const overnightDetails = document.querySelector('[data-overnight-details]');
 const rsvpStatus = document.querySelector('.rsvp-form-status');
 
 if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
+  let rsvpSubmissionLocked = false;
   const setDialogOpen = (open) => {
     document.body.classList.toggle('rsvp-opened', open);
     if (open) {
@@ -115,6 +116,7 @@ if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
   });
   rsvpForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    if (rsvpSubmissionLocked) return;
     if (!rsvpForm.reportValidity()) return;
 
     const submitButton = rsvpForm.querySelector('.rsvp-submit');
@@ -192,6 +194,7 @@ if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
     body.append('pageHistory', '0');
     body.append('submit', 'Submit');
 
+    rsvpSubmissionLocked = true;
     submitButton.disabled = true;
     rsvpStatus.textContent = 'Invio in corso…';
 
@@ -210,6 +213,7 @@ if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
         submitButton.textContent = 'Conferma inviata';
       })
       .catch(() => {
+        rsvpSubmissionLocked = false;
         rsvpStatus.textContent = 'Invio non riuscito. Riprova tra qualche istante.';
         submitButton.disabled = false;
       });
