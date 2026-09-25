@@ -206,7 +206,7 @@ if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
       body: body.toString()
     })
       .then(() => {
-        rsvpStatus.textContent = 'Grazie, conferma inviata correttamente.';
+        rsvpStatus.innerHTML = '<strong>Grazie, la vostra conferma è arrivata.</strong><br><strong>Ci vediamo il 7 dicembre.</strong>';
         submitButton.textContent = 'Conferma inviata';
       })
       .catch(() => {
