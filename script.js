@@ -117,7 +117,110 @@ if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
     event.preventDefault();
     if (!rsvpForm.reportValidity()) return;
 
-    rsvpStatus.textContent = 'Dati compilati correttamente.';
+    const submitButton = rsvpForm.querySelector('.rsvp-submit');
+    const getValue = (name) => {
+      const field = rsvpForm.querySelector(`[name="${name}"]`);
+      return field ? String(field.value || '').trim() : '';
+    };
+    const getChecked = (name) => {
+      const field = rsvpForm.querySelector(`input[name="${name}"]:checked`);
+      return field ? field.value : '';
+    };
+
+    const attendance = getChecked('attendance');
+    const children = getChecked('children');
+    const food = getChecked('food');
+    const overnight = getChecked('overnight');
+
+    const attendanceMap = {
+      si: 'Sì, sarò presente',
+      no: 'Mi dispiace, non potrò partecipare'
+    };
+    const yesNoMap = {
+      si: 'Sì',
+      no: 'No'
+    };
+    const foodMap = {
+      nessuna: 'Nessuna',
+      vegetariano: 'Vegetariano',
+      vegano: 'Vegano',
+      'senza-glutine': 'Senza glutine',
+      allergie: 'Allergie/intolleranze'
+    };
+    const overnightMap = {
+      si: 'Sì, necessito di pernottamento',
+      no: 'Non necessito di pernottamento'
+    };
+
+    const fields = {
+      'entry.1739985760': getValue('guest_name'),
+      'entry.1942568367': getValue('guest_surname'),
+      'entry.925805838': attendanceMap[attendance] || ''
+    };
+
+    if (attendance === 'si') {
+      fields['entry.274418705'] = yesNoMap[children] || '';
+      fields['entry.1432009974'] = children === 'si' ? getValue('children_number') : '';
+      fields['entry.541938802'] = children === 'si' ? getValue('children_ages') : '';
+
+      if (food === 'altro') {
+        const otherFood = getValue('food_other');
+        fields['entry.31519537'] = '__other_option__';
+        fields['entry.31519537.other_option_response'] = otherFood;
+        fields['entry.625819844'] = otherFood;
+      } else {
+        fields['entry.31519537'] = foodMap[food] || '';
+        fields['entry.625819844'] = '';
+      }
+
+      fields['entry.175629213'] = food === 'allergie' ? getValue('food_allergies') : '';
+      fields['entry.1317663739'] = overnightMap[overnight] || '';
+      fields['entry.743480152'] = overnight === 'si' ? getValue('rooms') : '';
+      fields['entry.829440453'] = overnight === 'si' ? getValue('overnight_people') : '';
+      fields['entry.864995182'] = getValue('special_needs');
+    }
+
+    const targetName = 'google-rsvp-' + Date.now();
+    const iframe = document.createElement('iframe');
+    iframe.name = targetName;
+    iframe.hidden = true;
+    iframe.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(iframe);
+
+    const googleForm = document.createElement('form');
+    googleForm.method = 'POST';
+    googleForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLSf-Us74iZMntnSuSksnYq2_1BkBTYjKzqc0iGv6lWQcMNrUvw/formResponse';
+    googleForm.target = targetName;
+    googleForm.style.display = 'none';
+
+    Object.entries(fields).forEach(([name, value]) => {
+      if (value === '') return;
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      input.value = value;
+      googleForm.appendChild(input);
+    });
+
+    document.body.appendChild(googleForm);
+
+    submitButton.disabled = true;
+    rsvpStatus.textContent = 'Invio in corso…';
+
+    try {
+      googleForm.submit();
+      window.setTimeout(() => {
+        rsvpStatus.textContent = 'Grazie, conferma inviata correttamente.';
+        submitButton.textContent = 'Conferma inviata';
+        googleForm.remove();
+        window.setTimeout(() => iframe.remove(), 3000);
+      }, 900);
+    } catch (error) {
+      rsvpStatus.textContent = 'Invio non riuscito. Riprova tra qualche istante.';
+      submitButton.disabled = false;
+      googleForm.remove();
+      iframe.remove();
+    }
   });
 }
 
