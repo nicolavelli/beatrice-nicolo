@@ -180,47 +180,39 @@ if (rsvpDialog && rsvpOpenButton && rsvpCloseButton && rsvpForm) {
       fields['entry.864995182'] = getValue('special_needs');
     }
 
-    const targetName = 'google-rsvp-' + Date.now();
-    const iframe = document.createElement('iframe');
-    iframe.name = targetName;
-    iframe.hidden = true;
-    iframe.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(iframe);
-
-    const googleForm = document.createElement('form');
-    googleForm.method = 'POST';
-    googleForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLSf-Us74iZMntnSuSksnYq2_1BkBTYjKzqc0iGv6lWQcMNrUvw/formResponse';
-    googleForm.target = targetName;
-    googleForm.style.display = 'none';
+    const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSf-Us74iZMntnSuSksnYq2_1BkBTYjKzqc0iGv6lWQcMNrUvw/formResponse';
+    const body = new URLSearchParams();
 
     Object.entries(fields).forEach(([name, value]) => {
-      if (value === '') return;
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = name;
-      input.value = value;
-      googleForm.appendChild(input);
+      if (value !== '') body.append(name, value);
     });
 
-    document.body.appendChild(googleForm);
+    // Parametri standard usati dal modulo Google.
+    body.append('fvv', '1');
+    body.append('pageHistory', '0');
+    body.append('submit', 'Submit');
 
     submitButton.disabled = true;
     rsvpStatus.textContent = 'Invio in corso…';
 
-    try {
-      googleForm.submit();
-      window.setTimeout(() => {
+    fetch(googleFormUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      cache: 'no-store',
+      keepalive: true,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: body.toString()
+    })
+      .then(() => {
         rsvpStatus.textContent = 'Grazie, conferma inviata correttamente.';
         submitButton.textContent = 'Conferma inviata';
-        googleForm.remove();
-        window.setTimeout(() => iframe.remove(), 3000);
-      }, 900);
-    } catch (error) {
-      rsvpStatus.textContent = 'Invio non riuscito. Riprova tra qualche istante.';
-      submitButton.disabled = false;
-      googleForm.remove();
-      iframe.remove();
-    }
+      })
+      .catch(() => {
+        rsvpStatus.textContent = 'Invio non riuscito. Riprova tra qualche istante.';
+        submitButton.disabled = false;
+      });
   });
 }
 
