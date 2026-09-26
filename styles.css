@@ -2,7 +2,7 @@
   --vanilla:#F3E6C9;
   --green:#18352F;
   --green-deep:#10261F;
-  --dahlia:#7B2034;
+  --dahlia:#762738;
   --muted:#68766F;
   --line:rgba(24,53,47,.16);
   --serif:"Bodoni Moda",Georgia,serif;
@@ -218,7 +218,7 @@ nav{display:none}
   font-weight:600;
   line-height:.7;
   letter-spacing:-.1em;
-  color:rgba(123,32,52,.035);
+  color:rgba(118,39,56,.035);
 }
 
 .venue{
@@ -436,13 +436,13 @@ nav{display:none}
 }
 
 .quote-section{
-  background:#7B2034;
+  background:#762738;
 }
 .lighthouse-art::before{
   content:"";
   position:absolute;
   inset:-3%;
-  background:radial-gradient(circle at 70% 60%,rgba(123,32,52,0) 45%,#7B2034 100%);
+  background:radial-gradient(circle at 70% 60%,rgba(118,39,56,0) 45%,#762738 100%);
   z-index:1;
   pointer-events:none;
 }
@@ -498,7 +498,7 @@ nav{display:none}
   margin:0;
   border:1px solid rgba(24,53,47,.12);
 }
-.swatch-dahlia{background:#7B2034}
+.swatch-dahlia{background:#762738}
 .swatch-green{background:#18352F}
 .swatch-vanilla{background:#F3E6C9}
 .colour-card p{
@@ -547,7 +547,7 @@ nav{display:none}
   visibility:visible !important;
   opacity:1 !important;
 }
-.dress-palette .swatch-dahlia{background:#7B2034 !important}
+.dress-palette .swatch-dahlia{background:#762738 !important}
 .dress-palette .swatch-green{background:#18352F !important}
 .dress-palette .swatch-vanilla{background:#F3E6C9 !important}
 .dress-palette .colour-card p{
@@ -638,7 +638,7 @@ nav{display:none}
 
 /* Faro perfettamente immerso nel Red Dahlia */
 .lighthouse-art{
-  background:#7B2034;
+  background:#762738;
 }
 .lighthouse-art img{
   mix-blend-mode:normal;
@@ -646,16 +646,16 @@ nav{display:none}
 }
 .lighthouse-art::before{
   background:
-    linear-gradient(90deg,#7B2034 0%,rgba(123,32,52,.72) 10%,rgba(123,32,52,0) 27%),
-    linear-gradient(180deg,#7B2034 0%,rgba(123,32,52,0) 14%,rgba(123,32,52,0) 84%,#7B2034 100%);
+    linear-gradient(90deg,#762738 0%,rgba(118,39,56,.72) 10%,rgba(118,39,56,0) 27%),
+    linear-gradient(180deg,#762738 0%,rgba(118,39,56,0) 14%,rgba(118,39,56,0) 84%,#762738 100%);
 }
 
 /* Faro come vero background della sezione citazione */
 .quote-section{
   background:
-    linear-gradient(90deg, rgba(123,32,52,.00) 0%, rgba(123,32,52,.00) 58%, rgba(123,32,52,.06) 72%, rgba(123,32,52,.22) 100%),
+    linear-gradient(90deg, rgba(118,39,56,.00) 0%, rgba(118,39,56,.00) 58%, rgba(118,39,56,.06) 72%, rgba(118,39,56,.22) 100%),
     url('assets/lighthouse-seamless.jpg?v=12') right bottom / min(52vw,760px) auto no-repeat,
-    #7B2034 !important;
+    #762738 !important;
 }
 .lighthouse-art{
   display:none !important;
@@ -672,9 +672,9 @@ nav{display:none}
 @media (max-width:819px){
   .quote-section{
     background:
-      linear-gradient(90deg, rgba(123,32,52,.00) 0%, rgba(123,32,52,.00) 48%, rgba(123,32,52,.14) 72%, rgba(123,32,52,.30) 100%),
+      linear-gradient(90deg, rgba(118,39,56,.00) 0%, rgba(118,39,56,.00) 48%, rgba(118,39,56,.14) 72%, rgba(118,39,56,.30) 100%),
       url('assets/lighthouse-seamless.jpg?v=12') right bottom / min(72vw,320px) auto no-repeat,
-      #7B2034 !important;
+      #762738 !important;
   }
   .quote-copy{
     max-width:100%;
@@ -685,9 +685,9 @@ nav{display:none}
   .quote-section{
     padding-right:max(28vw,340px);
     background:
-      linear-gradient(90deg, rgba(123,32,52,.00) 0%, rgba(123,32,52,.00) 58%, rgba(123,32,52,.06) 74%, rgba(123,32,52,.20) 100%),
+      linear-gradient(90deg, rgba(118,39,56,.00) 0%, rgba(118,39,56,.00) 58%, rgba(118,39,56,.06) 74%, rgba(118,39,56,.20) 100%),
       url('assets/lighthouse-seamless.jpg?v=12') right bottom / min(44vw,760px) auto no-repeat,
-      #7B2034 !important;
+      #762738 !important;
   }
 }
 
@@ -695,13 +695,13 @@ nav{display:none}
 .quote-section{
   background:
     url('assets/lighthouse-transparent.webp?v=13') right bottom / min(58vw,900px) auto no-repeat,
-    #7B2034 !important;
+    #762738 !important;
 }
 @media (max-width:819px){
   .quote-section{
     background:
       url('assets/lighthouse-transparent.webp?v=13') right bottom / min(78vw,420px) auto no-repeat,
-      #7B2034 !important;
+      #762738 !important;
   }
   .quote-copy{
     padding-right:16vw;
@@ -712,7 +712,7 @@ nav{display:none}
     padding-right:max(30vw,360px);
     background:
       url('assets/lighthouse-transparent.webp?v=13') right bottom / min(52vw,900px) auto no-repeat,
-      #7B2034 !important;
+      #762738 !important;
   }
 }
 
@@ -741,7 +741,7 @@ nav{display:none}
 .quote-section{
   background:
     url('assets/lighthouse-vector.svg?v=14') right bottom / min(58vw,940px) auto no-repeat,
-    #7B2034 !important;
+    #762738 !important;
 }
 .quote-copy{
   max-width:68%;
@@ -751,7 +751,7 @@ nav{display:none}
     padding-bottom:190px;
     background:
       url('assets/lighthouse-vector.svg?v=14') right bottom / min(96vw,470px) auto no-repeat,
-      #7B2034 !important;
+      #762738 !important;
   }
   .quote-copy{
     max-width:100%;
@@ -763,7 +763,7 @@ nav{display:none}
     padding-right:max(34vw,420px);
     background:
       url('assets/lighthouse-vector.svg?v=14') right bottom / min(56vw,940px) auto no-repeat,
-      #7B2034 !important;
+      #762738 !important;
   }
 }
 
@@ -776,7 +776,7 @@ nav{display:none}
 .quote-section{
   background:
     url('assets/lighthouse-final.webp?v=15') right bottom / min(76vw,1180px) auto no-repeat,
-    #7B2034 !important;
+    #762738 !important;
 }
 .quote-copy{
   max-width:64% !important;
@@ -786,7 +786,7 @@ nav{display:none}
     padding-bottom:230px !important;
     background:
       url('assets/lighthouse-final.webp?v=15') right bottom / min(118vw,620px) auto no-repeat,
-      #7B2034 !important;
+      #762738 !important;
   }
   .quote-copy{
     max-width:100% !important;
@@ -798,13 +798,13 @@ nav{display:none}
     padding-right:max(38vw,470px) !important;
     background:
       url('assets/lighthouse-final.webp?v=15') right bottom / min(70vw,1180px) auto no-repeat,
-      #7B2034 !important;
+      #762738 !important;
   }
 }
 
 /* FARO FINALE — usa esattamente l'immagine fornita dall'utente */
 .quote-section{
-  background-color:#7B2034 !important;
+  background-color:#762738 !important;
   background-image:url('assets/lighthouse-final-exact.webp?v=16') !important;
   background-repeat:no-repeat !important;
   background-position:right bottom !important;
@@ -839,7 +839,7 @@ nav{display:none}
 .quote-section{
   position:relative !important;
   overflow:hidden !important;
-  background:#7B2034 !important;
+  background:#762738 !important;
   background-image:none !important;
 }
 .quote-lighthouse-exact{
@@ -895,7 +895,7 @@ nav{display:none}
 .quote-section{
   position:relative !important;
   overflow:hidden !important;
-  background:#7B2034 !important;
+  background:#762738 !important;
   background-image:none !important;
 }
 .quote-lighthouse-exact{
@@ -1131,7 +1131,7 @@ body.rsvp-opened{
 .quote-section{
   position:relative !important;
   overflow:hidden !important;
-  background:#7B2034 !important;
+  background:#762738 !important;
   background-image:none !important;
 }
 .quote-lighthouse-exact{
@@ -1180,11 +1180,11 @@ body.rsvp-opened{
   }
 }
 
-/* 19 — faro HQ: asset 1200px con bordi campionati esattamente #7B2034 */
+/* 19 — faro HQ: asset 1200px con bordi campionati esattamente #762738 */
 .quote-section{
   position:relative !important;
   overflow:hidden !important;
-  background:#7B2034 !important;
+  background:#762738 !important;
   background-image:none !important;
 }
 .quote-lighthouse-exact{
@@ -1693,7 +1693,7 @@ body.rsvp-opened{
   right:0 !important;
   top:0 !important;
   height:7px !important;
-  background:linear-gradient(90deg,#7B2034 0 64%,#18352F 64% 100%) !important;
+  background:linear-gradient(90deg,#762738 0 64%,#18352F 64% 100%) !important;
   pointer-events:none !important;
 }
 .gift-ticket-main{
@@ -1745,7 +1745,7 @@ body.rsvp-opened{
 .gift-boarding-title{
   font:600 9px var(--sans) !important;
   letter-spacing:.22em !important;
-  color:#7B2034 !important;
+  color:#762738 !important;
   white-space:nowrap !important;
 }
 .gift-flight-route{
@@ -1764,7 +1764,7 @@ body.rsvp-opened{
   display:block !important;
   font:600 8px var(--sans) !important;
   letter-spacing:.2em !important;
-  color:#7B2034 !important;
+  color:#762738 !important;
 }
 .gift-flight-route strong{
   font:600 clamp(27px,3vw,42px)/1 var(--sans) !important;
@@ -1791,7 +1791,7 @@ body.rsvp-opened{
   height:6px !important;
   margin-top:-3px !important;
   border-radius:50% !important;
-  background:#7B2034 !important;
+  background:#762738 !important;
 }
 .gift-flight-line::before{left:0 !important}
 .gift-flight-line::after{right:0 !important}
@@ -1802,7 +1802,7 @@ body.rsvp-opened{
   transform:translate(-50%,-53%) rotate(-7deg) !important;
   padding:0 8px !important;
   background:#F3E6C9 !important;
-  color:#7B2034 !important;
+  color:#762738 !important;
   font-size:21px !important;
 }
 .gift-flight-meta{
@@ -1863,11 +1863,11 @@ body.rsvp-opened{
   margin:0 !important;
   font:600 8px var(--sans) !important;
   letter-spacing:.18em !important;
-  color:#7B2034 !important;
+  color:#762738 !important;
 }
 .gift-ticket-label::before{
   content:"REGALO · " !important;
-  color:#7B2034 !important;
+  color:#762738 !important;
 }
 .gift-stub-code{
   font:600 9px var(--sans) !important;
@@ -1897,8 +1897,8 @@ body.rsvp-opened{
   width:100% !important;
   margin-top:3px !important;
   padding:12px 14px !important;
-  border:1px solid #7B2034 !important;
-  background:#7B2034 !important;
+  border:1px solid #762738 !important;
+  background:#762738 !important;
   color:#F3E6C9 !important;
 }
 .gift-copy-iban:disabled{
