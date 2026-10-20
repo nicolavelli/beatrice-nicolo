@@ -2045,3 +2045,22 @@ body.rsvp-opened{
     animation:none !important;
   }
 }
+
+
+/* 36 — palette matrimonio: quattro colori definitivi */
+.swatch-mosella{background:#5C6030 !important}
+.swatch-vite-antica{background:#AEAA81 !important}
+.swatch-nebbiolo{background:#7E113A !important}
+.swatch-amarone{background:#5E0414 !important}
+
+.dress-palette .colour-cards{
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  width:min(100%,500px) !important;
+  max-width:500px !important;
+}
+@media (max-width:620px){
+  .dress-palette .colour-cards{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    width:min(100%,380px) !important;
+  }
+}
